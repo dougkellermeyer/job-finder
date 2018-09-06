@@ -1,6 +1,6 @@
 # Job App
 
-This is an application to assist with the job finding process. See the "Doug Application User Stories for a more detailed description.
+This is an application to assist with the job finding process. See the "Doug Application User Stories" for a more detailed description.
 
 ## Running
 
