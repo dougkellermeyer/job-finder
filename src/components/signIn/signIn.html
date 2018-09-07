@@ -1,0 +1,29 @@
+<md-content class="md-padding" layout-xs="column" layout="row">
+        <div flex-xs flex-gt-xs="80" layout="column">
+          <md-card>
+            <md-card-title>
+              <md-card-title-text>
+                <span class="md-headline">Sign up below!</span>
+              </md-card-title-text>
+            </md-card-title>
+                <md-content class="md-no-momentum">
+                        <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>First Name</label>
+                        <input ng-model="user.name" type="text">
+                        </md-input-container>
+
+                        <md-input-container class="md-icon-float md-block">
+                        <!-- Use floating label instead of placeholder -->
+                        <label>Last Name</label>
+                        <input ng-model="user.name" type="text">
+                        </md-input-container>
+                
+                        <md-input-container class="md-block">
+                        <!-- Use floating placeholder instead of label -->
+                        <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+                        </md-input-container>
+                </md-content>
+           </md-card>
+        </div>
+</md-content>
