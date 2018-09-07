@@ -1,4 +1,4 @@
-function JobPostCtrl(){
+function JobPostCtrl(mainSvc){
     var vm = this;
 
     mainSvc.getPosts().then(function(res){
@@ -7,7 +7,7 @@ function JobPostCtrl(){
 }
 
 app.component('jobPost',{
-    templateUrl: './jobPost/jobPost.html',
+    templateUrl: '../src/components/jobPost/jobPost.html',
     controller: JobPostCtrl,
     controllerAs: 'vm'
 })
