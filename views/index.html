@@ -9,10 +9,18 @@
     <link rel="stylesheet" href="../less/main.less" />
     <link rel="stylesheet" href="../src/main.css" />
 </head>
-<body ng-controller="AppCtrl">
+<body ng-controller="AppCtrl as vm">
     <div layout="column">
         <md-toolbar>
-            <h1>Job Finder</h1>
+            <div class="md-toolbar-tools">
+                <md-button>JobFinder.img</md-button>
+        
+                <h2 flex md-truncate>Job Finder</h2>
+        
+                <md-button>Home/Dashboard</md-button>
+                <md-button>Sign In</md-button>
+                <md-button>Sign Up</md-button>
+            </div>
         </md-toolbar>
 
         <div class="container" layout="row">
@@ -39,7 +47,20 @@
                 <h3>List of jobs</h3>
                     <ul>
                         <li ng-repeat="job in jobs | filter: search">
-                            <button ng-click="testClick()">Save Job</button>{{job}}
+                            <button ng-click="saveJob()">Save Job</button>{{job}}
+                        </li>
+                    </ul>
+
+                <br>
+
+                <h3>Search Posts</h3>
+                <input type="text" ng-model="search2">
+                <h3>List of posts</h3>
+                    <!-- <job-post></job-post> -->
+                    <ul>
+                        <li ng-repeat="post in vm.posts | filter: search2">
+                            title: {{post.title}}
+                            body: {{post.body}}
                         </li>
                     </ul>
             </md-content>
@@ -53,6 +74,7 @@
     <script type="text/javascript" src="../node_modules/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="../node_modules/angular-material/angular-material.min.js"></script>
     <script type="text/javascript" src="../src/main.js"></script>
+    <script type="text/javascript" src="../src/components/jobPost/jobPost.js"></script>
     
 </body>
 </html>
