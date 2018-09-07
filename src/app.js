@@ -1,12 +1,11 @@
 var app = angular.module('jobFinder', ['ngMaterial']);
 
-// app.config(function($stateProvider,$urlRouterProvider){
-//     $urlRouterProvider.otherwise('/');
-
-//     $stateProvider.state('signIn', {
-//             url: '/signin',
-//             templateUrl: '<sign-in></sign-in>'
-//         })
+// app.config(function($stateProvider){
+//     $stateProvider
+//         .state('signIn', {
+//             url: '/views/signin',
+//             template: '<sign-in></sign-in>'
+//     })
 // })
 
 app.controller('AppCtrl', function($scope){
