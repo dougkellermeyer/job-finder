@@ -1,12 +1,20 @@
-var app = angular.module('jobFinder', ['ngMaterial']);
+var app = angular.module('jobFinder', ['ngMaterial', 'ui.router']);
 
-// app.config(function($stateProvider){
-//     $stateProvider
-//         .state('signIn', {
-//             url: '/views/signin',
-//             template: '<sign-in></sign-in>'
-//     })
-// })
+app.config(function($stateProvider){
+    $stateProvider
+        .state('home', {
+            url: '/home',
+            templateUrl: 'home.html'
+        })
+        .state('signUp', {
+            url: '/signup',
+            templateUrl: '../src/components/signUp/signUp.html'
+        })
+        .state('landingPage', {
+            url: '/',
+            templateUrl: 'landingPage.html'
+        })
+})
 
 app.controller('AppCtrl', function($scope){
 

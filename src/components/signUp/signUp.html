@@ -10,19 +10,20 @@
                         <md-input-container class="md-icon-float md-block">
                         <!-- Use floating label instead of placeholder -->
                         <label>First Name</label>
-                        <input ng-model="user.name" type="text">
+                        <input ng-model="user.firstName" type="text">
                         </md-input-container>
 
                         <md-input-container class="md-icon-float md-block">
                         <!-- Use floating label instead of placeholder -->
                         <label>Last Name</label>
-                        <input ng-model="user.name" type="text">
+                        <input ng-model="user.lastName" type="text">
                         </md-input-container>
                 
                         <md-input-container class="md-block">
                         <!-- Use floating placeholder instead of label -->
                         <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
                         </md-input-container>
+                        <md-button ui-sref="home">Submit</md-button>                
                 </md-content>
            </md-card>
         </div>
