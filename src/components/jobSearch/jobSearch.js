@@ -1,12 +1,5 @@
-function JobSearch($scope){
-    $scope.jobs = ['Software Develeper',
-    'Software Manager',
-    "QA Engineer",
-    "UX Engineer",
-    "Network Engineer",
-    'VP of Software',
-    'CEO'
-    ]
+function JobSearch(){
+console.log("job search working");
 }
  
  app.component('jobSearch',{

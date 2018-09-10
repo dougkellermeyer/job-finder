@@ -16,7 +16,12 @@ app.config(function($stateProvider){
         })
 })
 
-app.controller('AppCtrl', function($scope){
+app.controller('AppCtrl', function($scope, $http){
+
+    $http.get('./data/jobs.json')
+        .then(function(data){
+            $scope.jobs = data;
+        });
 
     function saveJob(){
         alert('Job Saved!');

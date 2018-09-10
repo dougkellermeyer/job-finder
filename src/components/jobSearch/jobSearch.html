@@ -3,7 +3,8 @@
 <h3>List of jobs</h3>
     <ul>
         <li ng-repeat="job in jobs | filter: search">
-            <button ng-click="saveJob()">Save Job</button>{{job}}
+            <button ng-click="saveJob()">Save Job</button>
+            {{job.positionName + ' - ' + job.company}}
         </li>
     </ul>
 

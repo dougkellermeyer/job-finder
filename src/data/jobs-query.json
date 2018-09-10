@@ -1,8 +1,0 @@
-{
-    "jobs":[
-        {"id": "0", "company":"Company Name 1", "positionName": "Position Name 1", "datePosted": "datePosted1"},
-        {"id": "1", "company":"Company Name 2", "positionName": "Position Name 2", "datePosted": "datePosted2"},
-        {"id": "2", "company":"Company Name 3", "positionName": "Position Name 3", "datePosted": "datePosted3"},
-        {"id": "3", "company":"Company Name 4", "positionName": "Position Name 4", "datePosted": "datePosted4"}
-    ]
-}
