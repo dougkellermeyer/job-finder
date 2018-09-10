@@ -11,37 +11,21 @@
 </head>
 <body ng-controller="AppCtrl as vm">
 
-    <!-- <a ui-sref="signIn">Sign In</a>
-    <ui-view></ui-view> -->
-
-    <div layout="column">
-        
-    <job-navbar></job-navbar>
-        <div class="container" layout="row">
-            <job-sidenav></job-sidenav>
-
-            <md-content id="content" flex>
-            <sign-up></sign-up>
-
-            <job-search></job-search>
-
-            <job-post></job-post>
-                       
-            </md-content>
-        </div>
-        
-    </div>
+    <ui-view></ui-view>
 
     <script type="text/javascript" src="../node_modules/angular/angular.min.js"></script>
     <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
     <script type="text/javascript" src="../node_modules/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="../node_modules/angular-material/angular-material.min.js"></script>
+    <script type="text/javascript" src="../node_modules/@uirouter/core/_bundles/ui-router-core.js"></script>
+    <script type="text/javascript" src="../node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
     <script type="text/javascript" src="../src/app.js"></script>
     <script type="text/javascript" src="../src/components/jobPost/jobPost.js"></script>
     <script type="text/javascript" src="../src/components/Navbar/Navbar.js"></script>
     <script type="text/javascript" src="../src/components/sideNav/sideNav.js"></script>
     <script type="text/javascript" src="../src/components/jobSearch/jobSearch.js"></script>
     <script type="text/javascript" src="../src/components/signUp/signUp.js"></script>
+    <script type="text/javascript" src="../src/components/landingPageNav/landingPageNav.js"></script>
 
     
 </body>
