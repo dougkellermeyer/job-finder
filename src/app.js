@@ -2,17 +2,17 @@ var app = angular.module('jobFinder', ['ngMaterial', 'ui.router']);
 
 app.config(function($stateProvider){
     $stateProvider
-        .state('home', {
-            url: '/home',
-            templateUrl: 'home.html'
+        .state('landingPage', {
+            url: '/',
+            templateUrl: 'landingPage.html'
         })
         .state('signUp', {
             url: '/signup',
             templateUrl: '../src/components/signUp/signUp.html'
         })
-        .state('landingPage', {
-            url: '/',
-            templateUrl: 'landingPage.html'
+        .state('home', {
+            url: '/home',
+            templateUrl: 'home.html'
         })
 })
 
