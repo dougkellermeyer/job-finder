@@ -12,26 +12,21 @@ app.config(function($stateProvider){
         })
         .state('home', {
             url: '/home',
-            templateUrl: 'home.html'
+            templateUrl: 'home.html',
+            controller: "homeController",
+            controllerAs: "$ctrl"
         })
 })
-
-app.controller('AppCtrl', function($scope, $http){
-
-    $http.get('./data/jobs.json')
-        .then(function(data){
-            $scope.jobs = data;
-        });
-
-    function saveJob(){
-        alert('Job Saved!');
-    }
-    $scope.saveJob = saveJob;
-});
 
 app.service('mainSvc', function($http){
     this.getPosts = function(){
         return $http.get('https://jsonplaceholder.typicode.com/posts')
+    };
+});
+
+app.service('searchSvc', function($http){
+    this.getJobs = function(){
+        return $http.get('http://127.0.0.1:8080/src/data/jobs.json')
     };
 });
 

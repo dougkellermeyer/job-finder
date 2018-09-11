@@ -5,8 +5,15 @@
 
             <md-content id="content" flex>
                 <h1>Home page</h1>
+                <h3>List of jobs</h3>
+                    <ul>
+                        <li ng-repeat="job in $ctrl.jobs">
+                            {{job.positionName + ' - ' + job.company}}
+                        </li>
+                    </ul>
+                    <md-button ui-sref="#">Search more jobs</md-button>
 
-                <job-search></job-search>
+                        <br>
                 <job-post></job-post>
                 
             </md-content>
