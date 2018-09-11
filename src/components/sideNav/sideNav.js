@@ -1,5 +1,5 @@
 function SideNav(){
-    console.log("sideNav works!")
+    // console.log("sideNav works!")
  }
  
  app.component('jobSidenav',{

@@ -1,0 +1,47 @@
+<div layout="column">   
+        <job-navbar></job-navbar>
+            <div class="container" layout="row">
+                <job-sidenav></job-sidenav>
+    
+                <md-content id="content" flex>
+                    <h1>Job Search Page</h1>
+
+                    <md-card>
+                            <md-card-title>
+                              <md-card-title-text>
+                                <span class="md-headline">Let's find your next job</span>
+                                <span class="md-subhead">Where should we start?</span>
+                              </md-card-title-text>
+                            </md-card-title>
+                        
+                            <md-card-content>
+                              <div layout="row">
+                                <md-input-container>
+                                  <label>City</label>
+                                  <input>
+                                </md-input-container>
+                        
+                                <md-input-container>
+                                  <label>State</label>
+                                  <md-select ng-model="$ctrl.userState">
+                                    <md-option><em>None</em></md-option>
+                                    <md-option ng-repeat="state in $ctrl.states" ng-value="state.abbrev">
+                                      {{state.abbrev}}
+                                    </md-option>
+                                  </md-select>
+                                </md-input-container>
+                                <md-input-container>
+                                    <label>Zip Code</label>
+                                    <input>
+                                </md-input-container>
+                              </div>
+                            </md-card-content>
+                          </md-card>
+
+                    <h3>List of jobs</h3>
+                        <md-button class="md-raised md-primary" ui-sref="">Search</md-button>              
+                </md-content>
+            </div>
+    </div>
+    
+    
