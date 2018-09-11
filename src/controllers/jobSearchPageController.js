@@ -10,16 +10,18 @@ app.controller("jobSearchPageController", function($scope){
         .split(' ').map(function (state) { return { abbrev: state }; });
     
     $scope.items = ["Coding","Leading teams","HTML","JavaScript","CSS","Databases"];
-    $scope.selected = [];
+    
+    var userSelectedArray = $scope.selected = [];
 
     function showSelected() {
-        console.log($scope.selected);
+        console.log(userSelectedArray);
     }
+    $scope.showSelected = showSelected;
 
     $scope.toggle = function (item, list) {
-        var userSelected = list.indexOf(item);
-        if (userSelected > -1) {
-            list.splice(userSelected, 1);
+        var stuff = list.indexOf(item);
+        if (stuff > -1) {
+            list.splice(stuff, 1);
         }
         else {
             list.push(item);
