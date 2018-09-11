@@ -7,15 +7,13 @@
                 <h1>Home page</h1>
                 <h3>List of jobs</h3>
                     <ul>
-                        <li ng-repeat="job in $ctrl.jobs">
+                        <li ng-repeat="job in $ctrl.jobs | limitTo:quantity">
                             {{job.positionName + ' - ' + job.company}}
                         </li>
                     </ul>
                     <md-button ui-sref="#">Search more jobs</md-button>
 
-                        <br>
-                <job-post></job-post>
-                
+                        <br>                
             </md-content>
         </div>
 </div>
