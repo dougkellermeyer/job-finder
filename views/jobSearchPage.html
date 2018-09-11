@@ -3,9 +3,9 @@
             <div class="container" layout="row">
                 <job-sidenav></job-sidenav>
     
-                <md-content id="content" flex>
+                <md-content id="content">
                     <h1>Job Search Page</h1>
-
+                <!-- ----------------CONTENT GOES HERE ----------------  -->
                     <md-card>
                             <md-card-title>
                               <md-card-title-text>
@@ -30,6 +30,7 @@
                                     </md-option>
                                   </md-select>
                                 </md-input-container>
+                                
                                 <md-input-container>
                                     <label>Zip Code</label>
                                     <input>
@@ -38,8 +39,26 @@
                             </md-card-content>
                           </md-card>
 
-                    <h3>List of jobs</h3>
-                        <md-button class="md-raised md-primary" ui-sref="">Search</md-button>              
+                        <md-card>
+                            <md-card-content>
+                                <div>
+                                    <md-card-title>
+                                        <md-card-title-text>
+                                            <span class="md-headline">Select some things you like below</span>
+                                        </md-card-title-text>
+                                    </md-card-title>                                                <br>
+                                    <div layout="row" layout-wrap flex>
+                                    <div flex="50" ng-repeat="item in items">
+                                        <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
+                                        {{ item }} <span ng-if="exists(item, selected)"></span>
+                                        </md-checkbox>
+                                    </div>
+                                    </div>
+                                </div>
+                            </md-card-content>
+                        </md-card>
+                    <!-- ------------------- CONTENT ENDS HERE ---------------- -->
+                    <md-button ng-click="showSelected()" class="md-raised md-primary" ui-sref="">Search</md-button>              
                 </md-content>
             </div>
     </div>
