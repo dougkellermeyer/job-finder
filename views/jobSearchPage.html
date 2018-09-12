@@ -25,7 +25,6 @@
                                 <md-input-container>
                                   <label>State</label>
                                   <md-select ng-model="$ctrl.userState">
-                                    <md-option><em>None</em></md-option>
                                     <md-option ng-repeat="state in $ctrl.states" ng-value="state.abbrev">
                                       {{state.abbrev}}
                                     </md-option>
@@ -46,6 +45,8 @@
                                     <md-card-title>
                                         <md-card-title-text>
                                             <span class="md-headline">Select some things you like below</span>
+                                            <span class="md-subhead">Select at least one box</span>
+
                                         </md-card-title-text>
                                     </md-card-title>                                                <br>
                                     <div layout="row" layout-wrap flex>
@@ -59,7 +60,8 @@
                             </md-card-content>
                         </md-card>
                     <!-- ------------------- CONTENT ENDS HERE ---------------- -->
-                    <md-button ng-click="showSelected()" class="md-raised md-primary" ui-sref="">Search</md-button>              
+                    <md-button ng-click="showSelected()" class="md-raised md-primary" ui-sref="jobSearchResults">Search</md-button> 
+                    <h2>{{$ctrl.userState}}</h2>             
                 </md-content>
             </div>
     </div>

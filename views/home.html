@@ -5,7 +5,7 @@
 
             <md-content id="content" flex>
                 <h1>Home page</h1>
-                <h3>List of jobs</h3>
+                <h3>Top jobs</h3>
                     <ul>
                         <li ng-repeat="job in $ctrl.jobs | limitTo:quantity">
                             {{job.positionName + ' - ' + job.company}}
