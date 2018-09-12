@@ -12,19 +12,38 @@
 
                         </md-card-content>
                     </md-card>
-                    
+
                     <table>
+                        <thead>
                             <tr>
-                                <td>Position Name</td>
-                                <td>Company</td>
-                                <td>Position Name</td>
-                                <td>Company</td>
-                                <td>Position Name</td>
-                                <td>Company</td>
-                                <td>Position Name</td>
-                                <td>Company</td>
+                                <th>
+                                    <a href="#!/results" ng-click="orderByField='positionName'; reverseSort = !reverseSort">
+                                    Position Name <span ng-show="orderByField == 'positionName'">
+                                        <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                    </a>
+                                    </th>
+                                    <th>
+                                    <a href="#!/results" ng-click="orderByField='company'; reverseSort = !reverseSort">
+                                        Company Name <span ng-show="orderByField == 'company'">
+                                            <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                    </a>
+                                    </th>
+                                    <th>
+                                    <a href="#!/results" ng-click="orderByField='datePosted'; reverseSort = !reverseSort">
+                                    Date Posted <span ng-show="orderByField == 'datePosted'">
+                                        <span ng-show="!reverseSort">^</span><span ng-show="reverseSort">v</span></span>
+                                    </a>
+                                </th>
                             </tr>
-                        </table>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="job in $ctrl.jobs |orderBy:orderByField:reverseSort">
+                                <td>{{job.positionName}}</td>
+                                <td>{{job.company}}</td>
+                                <td>{{job.datePosted}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Go back</md-button>
                 </md-content>
