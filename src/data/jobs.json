@@ -3,27 +3,27 @@
         {"id": "0", 
         "company":"AirBnb", 
         "positionName": "Software Developer", 
-        "datePosted": "datePosted0"},
+        "datePosted": "1/31/2018"},
 
         {"id": "1", 
         "company":"Google", 
         "positionName": "Software Manager", 
-        "datePosted": "datePosted1"},
+        "datePosted": "2/15/2018"},
 
         {"id": "2", 
         "company":"Amazon", 
         "positionName": "QA Engineer", 
-        "datePosted": "datePosted2"},
+        "datePosted": "8/5/2018"},
 
         {"id": "3", 
         "company":"Paychex", 
         "positionName": "UX Engineer", 
-        "datePosted": "datePosted3"},
+        "datePosted": "8/2/2018"},
 
         {"id": "4", 
         "company":"Mindex", 
         "positionName": "Network Engineer", 
-        "datePosted": "datePosted4"},
+        "datePosted": "9/10/2018"},
 
         {"id": "5", 
         "company":"Brand Networks", 
