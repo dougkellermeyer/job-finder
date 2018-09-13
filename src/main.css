@@ -23,3 +23,7 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
   background-color: lightblue;
 }
+
+#signUpCard {
+    justify-content: center;
+}

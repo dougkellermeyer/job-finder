@@ -8,7 +8,9 @@ app.config(function($stateProvider){
         })
         .state('signUp', {
             url: '/signup',
-            templateUrl: '../src/components/signUp/signUp.html'
+            templateUrl: 'signUp.html',
+            controller: "signUpController",
+            controllerAs: "$ctrl"
         })
         .state('home', {
             url: '/home',
