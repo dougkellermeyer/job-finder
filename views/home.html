@@ -9,12 +9,12 @@
                     <ul>
                         <li ng-repeat="job in $ctrl.jobs | limitTo:quantity">
                             {{job.positionName + ' - ' + job.company}}
-                            <span><md-button class="md-raised">Learn more</md-button></span>
+                            <md-button class="md-raised" ui-sref="jobDetailsPage">Learn more</md-button>
+
                             <span><br><br></span>
                         </li>
                     </ul>
                     <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Search more jobs</md-button>
-
                         <br>                
             </md-content>
         </div>

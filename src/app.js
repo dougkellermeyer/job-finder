@@ -30,6 +30,12 @@ app.config(function($stateProvider){
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl"
         })
+        .state('jobDetailsPage', {
+            url: '/details',
+            templateUrl: 'jobDetailsPage.html',
+            controller: "jobDetailsPageController",
+            controllerAs: "$ctrl"
+        })
 })
 
 //test service

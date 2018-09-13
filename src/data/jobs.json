@@ -1,7 +1,7 @@
 {
     "jobs":[
         {"id": "0", 
-        "company":"AirBnb", 
+        "company":"Airbnb", 
         "positionName": "Software Developer", 
         "datePosted": 30,
         "days": "days ago"},
