@@ -52,3 +52,4 @@ app.service('searchSvc', function($http){
     };
 });
 
+

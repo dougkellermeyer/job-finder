@@ -15,11 +15,13 @@ app.controller("jobSearchPageController", function($scope){
     $scope.selected = [];
 
     var userSelectedArray = $scope.selected = [];
-    
+
     function showSelected() {
         console.log(userSelectedArray);
     }
     $scope.showSelected = showSelected;
+
+    
 
     //tracks what is selected in checkboxes and pushes them to the userSelectedArray
     $scope.toggle = function (item, list) {

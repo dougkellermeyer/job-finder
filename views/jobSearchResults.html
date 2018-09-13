@@ -10,6 +10,8 @@
                             <md-card-title>
                                 <h2>Job Search Results</h2>
                             </md-card-title>
+                            
+                            <h3>You searched for: {{userSelectedArray}} </h3>
 
                             <table>
                                 <thead>
@@ -50,8 +52,6 @@
                                         <td>{{job.positionName}}</td>
                                         <td>{{job.company}}</td>
                                         <td>{{job.datePosted + job.days}}</td>
-                                        <td><a class="md-raised" ui-sref="jobDetailsPage">Learn more</a>
-                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
