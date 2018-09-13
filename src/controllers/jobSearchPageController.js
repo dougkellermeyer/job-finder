@@ -16,7 +16,6 @@ app.controller("jobSearchPageController", function($scope){
 
     var userSelectedArray = $scope.selected = [];
     
-    //push user selections into an array, $scope.selected or userSelectedArray
     function showSelected() {
         console.log(userSelectedArray);
     }
