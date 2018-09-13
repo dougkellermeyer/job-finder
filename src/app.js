@@ -1,4 +1,4 @@
-var app = angular.module('jobFinder', ['ngMaterial', 'ui.router']);
+var app = angular.module('jobFinder', ['ngMaterial', 'ui.router','angularUtils.directives.dirPagination']);
 
 app.config(function($stateProvider){
     $stateProvider

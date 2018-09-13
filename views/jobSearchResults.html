@@ -10,6 +10,14 @@
                                 <h2>Job Search Results</h2>
                             </md-card-title>
 
+                            <ul>
+                                <li dir-paginate="job in $ctrl.jobs | itemsPerPage: 10">{{job.positionName}}
+
+                                </li>
+                            </ul>
+
+                            <dir-pagination-controls></dir-pagination-controls>
+                                                        
                         </md-card-content>
                     </md-card>
 
