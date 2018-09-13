@@ -51,7 +51,7 @@
                             <tr ng-repeat="job in $ctrl.jobs |orderBy:orderByField:reverseSort">
                                 <td>{{job.positionName}}</td>
                                 <td>{{job.company}}</td>
-                                <td>{{job.datePosted}}</td>
+                                <td>{{job.datePosted}} {{job.days}}</td>
                             </tr>
                         </tbody>
                     </table>
