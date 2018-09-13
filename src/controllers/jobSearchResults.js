@@ -10,4 +10,6 @@ app.controller("jobSearchResultsController", function($scope, searchSvc){
 
     $scope.orderByField = 'positionName';
     $scope.reverseSort = false;
+
+    
 });
