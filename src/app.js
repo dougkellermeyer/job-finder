@@ -25,7 +25,7 @@ app.config(function($stateProvider){
             controllerAs: "$ctrl"
         })
         .state('jobSearchResults', {
-            url: '/results',
+            url: '/results/:selected',
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl"
@@ -51,5 +51,4 @@ app.service('searchSvc', function($http){
         return $http.get('http://127.0.0.1:8080/src/data/jobs.json')
     };
 });
-
 

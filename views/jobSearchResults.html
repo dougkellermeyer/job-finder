@@ -11,7 +11,9 @@
                                 <h2>Job Search Results</h2>
                             </md-card-title>
                             
-                            <h3>You searched for: {{user}} </h3>
+                            <div ng-show="result">
+                                    <h3>You searched for: {{result}}</h3>
+                            </div>
 
                             <table>
                                 <thead>

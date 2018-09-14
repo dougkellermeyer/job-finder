@@ -1,4 +1,4 @@
-app.controller("jobSearchPageController", function($scope){
+app.controller("jobSearchPageController",['$scope','$state','$stateParams', function($scope, $state){
     console.log("job search ran!");
 
 
@@ -11,19 +11,7 @@ app.controller("jobSearchPageController", function($scope){
         .split(' ').map(function (state) { 
             return { abbrev: state }; 
         })
-
-    $scope.items = ["Coding","Leading teams","HTML","JavaScript","CSS","Databases"];
-    $scope.selected = [];
-
-    var userSelectedArray = $scope.selected = [];
-
-    function showSelected() {
-        console.log(userSelectedArray);
-    }
-    $scope.showSelected = showSelected;
-
-    
-
+        
     //tracks what is selected in checkboxes and pushes them to the userSelectedArray
     $scope.toggle = function (item, list) {
         var checkbox = list.indexOf(item);
@@ -38,4 +26,17 @@ app.controller("jobSearchPageController", function($scope){
     $scope.exists = function (item, list) {
         return list.indexOf(item) > -1;
     };
-});
+
+    $scope.items = ["Software","Leading teams","HTML","JavaScript","CSS","Databases"];
+    $scope.selected = []; 
+
+    $scope.showSelected = function(){
+        console.log("showSelected is being called");
+        $state.go('jobSearchResults',{
+            selected: $scope.selected,
+        });
+    }
+
+    
+
+}]);
