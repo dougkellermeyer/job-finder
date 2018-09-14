@@ -1,5 +1,4 @@
 function LandingPageNav(){
-    console.log("Landing page nav works!")
  }
  
  app.component('landingPageNav',{

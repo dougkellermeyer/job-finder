@@ -1,5 +1,4 @@
 function Navbar(){
-//    console.log("Navbar works!")
 }
 
 app.component('jobNavbar',{

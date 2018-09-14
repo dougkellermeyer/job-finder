@@ -1,11 +1,10 @@
-app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams',function($scope, searchSvc, $stateParams){
-    console.log("job search results working!")
+app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','filterSelectedSvc', '$filter',function($scope, searchSvc, $stateParams,filterSelectedSvc, $filter){
 
     var vm = this;
 
+    //get all jobs service
     searchSvc.getJobs().then(function(res){
         vm.jobs = res.data.jobs;
-        console.log("all jobs received");
     })
 
     $scope.orderByField = 'positionName';
@@ -19,6 +18,14 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     }
 
     $scope.result = $scope.selected;
- 
+
+    //running an async get http request to get json data so we can filter it using {{result}}
+    // from $state.go in jobSearchPage.js
+
+    filterSelectedSvc.async().then(function(d){
+        $scope.data = d;
+        console.log(d);
+    // put in filter service here
+    });
 }]);
 

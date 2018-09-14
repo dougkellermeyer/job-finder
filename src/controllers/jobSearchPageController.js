@@ -1,5 +1,5 @@
-app.controller("jobSearchPageController",['$scope','$state','$stateParams', function($scope, $state){
-    console.log("job search ran!");
+app.controller("jobSearchPageController",['$scope','$state', function($scope, $state){
+    
 
 
     var vm = this;
@@ -31,12 +31,8 @@ app.controller("jobSearchPageController",['$scope','$state','$stateParams', func
     $scope.selected = []; 
 
     $scope.showSelected = function(){
-        console.log("showSelected is being called");
         $state.go('jobSearchResults',{
             selected: $scope.selected,
         });
     }
-
-    
-
 }]);
