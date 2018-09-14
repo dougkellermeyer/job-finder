@@ -1,5 +1,6 @@
 app.controller("jobSearchPageController", function($scope){
-    console.log("job search ran!")
+    console.log("job search ran!");
+
 
     var vm = this;
 
