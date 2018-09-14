@@ -25,7 +25,7 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     filterSelectedSvc.async().then(function(d){
         $scope.data = d;
         console.log(d);
-    // put in filter service here
+    // put in filter service here using $filter
     });
 }]);
 
