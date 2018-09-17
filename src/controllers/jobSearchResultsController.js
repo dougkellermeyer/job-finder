@@ -26,6 +26,21 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
         $scope.data = d;
         console.log(d);
     // put in filter service here using $filter
+
     });
 }]);
+
+app.filter('keywordFilter', function(){
+    return function(input){
+        var output = [];
+        angular.forEach(input, function(value){
+            if(value.positionName == "Software Engineer" )
+            {
+                output.push(value);
+            }
+        })
+        console.log("filter working");
+        return output;
+    }
+});
 
