@@ -56,7 +56,7 @@
                                 </thead>
                                 <tbody>
                                     <tr dir-paginate="job in $ctrl.jobs |itemsPerPage: 20 
-                                        |orderBy:orderByField:reverseSort | keywordFilter">
+                                        | orderBy:orderByField:reverseSort | keywordFilter: result">
                                         <td>{{job.positionName}}</td>
                                         <td>{{job.company}}</td>
                                         <td>{{job.datePosted + job.days}}</td>

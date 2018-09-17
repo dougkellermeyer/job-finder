@@ -36,7 +36,7 @@ app.config(function($stateProvider){
             controller: "jobDetailsPageController",
             controllerAs: "$ctrl"
         })
-})
+});
 
 //test service
 app.service('mainSvc', function($http){
@@ -52,7 +52,7 @@ app.service('searchSvc', function($http){
     };
 });
 
-//filter service with async req so we can filer results based on boxes checked
+// filter service with async req so we can filer results based on boxes checked
 app.service('filterSelectedSvc', function($http){
     return {
         async: function(){

@@ -25,8 +25,9 @@ app.controller("jobSearchPageController",['$scope','$state', function($scope, $s
         return list.indexOf(item) > -1;
     };
 
-    $scope.items = ["Software","Leading teams","HTML","JavaScript","CSS","Databases"];
+    $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","CSS","Software Developer"];
     $scope.selected = []; 
+    console.log($scope.selected);
 
     $scope.showSelected = function(){
         $state.go('jobSearchResults',{

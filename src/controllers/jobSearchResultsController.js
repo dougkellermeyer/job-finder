@@ -1,4 +1,4 @@
-app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','filterSelectedSvc', '$filter',function($scope, searchSvc, $stateParams,filterSelectedSvc, $filter){
+app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams',function($scope, searchSvc, $stateParams){
 
     var vm = this;
 
@@ -18,28 +18,18 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     }
 
     $scope.result = $scope.selected;
-
-    //running an async get http request to get json data so we can filter it using {{result}}
-    // from $state.go in jobSearchPage.js
-
-    filterSelectedSvc.async().then(function(d){
-        $scope.data = d;
-        console.log(d);
-    // put in filter service here using $filter
-
-    });
+    console.log($scope.result);
 }]);
 
 app.filter('keywordFilter', function(){
-    return function(input){
+    return function(input, option){
         var output = [];
         angular.forEach(input, function(value){
-            if(value.positionName == "Software Engineer" )
+            if(value.positionName === option)
             {
                 output.push(value);
             }
         })
-        console.log("filter working");
         return output;
     }
 });
