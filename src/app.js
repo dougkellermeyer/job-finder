@@ -61,3 +61,16 @@ app.service('filterSelectedSvc', function($http){
     }
 });
 
+app.filter('keywordFilter', function(){
+    return function(input){
+        var output = [];
+        angular.forEach(input, function(value,key){
+            if(value.company === "Paychex" )
+            {
+                output.push(value);
+            }
+        })
+        return output;
+    }
+});
+
