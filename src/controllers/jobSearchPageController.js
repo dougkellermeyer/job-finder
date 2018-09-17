@@ -27,7 +27,6 @@ app.controller("jobSearchPageController",['$scope','$state', function($scope, $s
 
     $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","CSS","Software Developer"];
     $scope.selected = []; 
-    console.log($scope.selected);
 
     $scope.showSelected = function(){
         $state.go('jobSearchResults',{
