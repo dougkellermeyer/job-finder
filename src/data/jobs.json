@@ -3,121 +3,121 @@
         {"id": "0", 
         "company":"Airbnb", 
         "positionName": "Software Developer", 
-        "datePosted": 30,
-        "days": " days ago"},
+        "datePosted": 30
+        },
 
         {"id": "1", 
         "company":"Google", 
         "positionName": "Software Manager", 
-        "datePosted": 25,
-        "days": " days ago"},
+        "datePosted": 25
+        },
 
         {"id": "2", 
         "company":"Amazon", 
         "positionName": "QA Engineer", 
-        "datePosted": 20,
-        "days": " days ago"},
+        "datePosted": 20
+        },
 
         {"id": "3", 
         "company":"Paychex", 
         "positionName": "UX Engineer", 
-        "datePosted": 15,
-        "days": " days ago"},
+        "datePosted": 15
+        },
 
         {"id": "4", 
         "company":"Mindex", 
         "positionName": "Network Engineer", 
-        "datePosted": 10,
-        "days": " days ago"},
+        "datePosted": 10
+        },
 
         {"id": "5", 
         "company":"Brand Networks", 
         "positionName": "VP of Software", 
-        "datePosted": 5,
-        "days": " days ago"},
+        "datePosted": 5
+        },
 
         {"id": "6", 
         "company":"CaterTrax", 
         "positionName": "Software Engineer", 
-        "datePosted": 3,
-        "days": " days ago"},
+        "datePosted": 3
+        },
 
         {"id": "7", 
         "company":"EagleDream", 
         "positionName": "VP of Sales", 
-        "datePosted": 2,
-        "days": " days ago"},
+        "datePosted": 2
+        },
 
         {"id": "8", 
         "company":"Microsoft", 
         "positionName": "Software Engineer", 
-        "datePosted": 1,
-        "days": " day ago"},
+        "datePosted": 1
+        },
 
         {"id": "9", 
         "company":"Oracle", 
         "positionName": "Sr. Software Engineer", 
-        "datePosted": 14,
-        "days": " days ago"},
+        "datePosted": 14
+        },
 
         {"id": "10", 
         "company":"Red Hat", 
         "positionName": "Software Architect", 
-        "datePosted": 17,
-        "days": " days ago"},
+        "datePosted": 17
+        },
 
         {"id": "11", 
         "company":"Tyler Technologies", 
         "positionName": "Cloud Architect", 
-        "datePosted": 60,
-        "days": " days ago"},
+        "datePosted": 60
+        },
 
         {"id": "12", 
         "company":"Global Traffic Technologies", 
         "positionName": "Database Administrator", 
-        "datePosted": 40,
-        "days": " days ago"},
+        "datePosted": 40
+        },
 
         {"id": "13", 
         "company":"Code42", 
         "positionName": "System Administrator", 
-        "datePosted": 45,
-        "days": " days ago"},
+        "datePosted": 45
+        },
 
         {"id": "14", 
         "company":"Target", 
         "positionName": "Full Stack Engineer", 
-        "datePosted": 50,
-        "days": " days ago"},
+        "datePosted": 50
+        },
 
         {"id": "15", 
         "company":"Best Buy", 
         "positionName": "Front End Developer", 
-        "datePosted": 35,
-        "days": " days ago"},
+        "datePosted": 35
+        },
 
         {"id": "16", 
         "company":"Netflix", 
         "positionName": "Linux Administrator", 
-        "datePosted": 17,
-        "days": " days ago"},
+        "datePosted": 17
+        },
 
         {"id": "17", 
         "company":"Hulu", 
         "positionName": "Support Engineer", 
-        "datePosted": 22,
-        "days": " days ago"},
+        "datePosted": 22
+        },
 
         {"id": "18", 
         "company":"Thomson Reuters", 
         "positionName": "Software Lead", 
-        "datePosted": 19,
-        "days": " days ago"},
+        "datePosted": 19
+        },
 
         {"id": "19", 
         "company":"Synapse", 
         "positionName": "Position Name 20", 
-        "datePosted": 8,
-        "days": " days ago"}
+        "datePosted": 8
+        }
     ]
 }

@@ -9,24 +9,24 @@ app.controller("jobSearchPageController",['$scope','$state', function($scope, $s
         .split(' ').map(function (state) { 
             return { abbrev: state }; 
         })
+
+    $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","CSS","Software Developer"];
+    $scope.selected = []; 
         
-    //tracks what is selected in checkboxes and pushes them to the userSelectedArray
+    //tracks what is selected in checkboxes and pushes them to the $scope.selected
     $scope.toggle = function (item, list) {
-        var checkbox = list.indexOf(item);
-        if (checkbox > -1) {
-            list.splice(checkbox, 1);
-        }
-        else {
-            list.push(item);
+        if (list.includes(item)) {
+            $scope.selected = list.filter(function (val) {
+              return item !== val;
+            });
+          } else {
+            $scope.selected = list.concat(item);
         }
     };
 
     $scope.exists = function (item, list) {
         return list.indexOf(item) > -1;
     };
-
-    $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","CSS","Software Developer"];
-    $scope.selected = []; 
 
     $scope.showSelected = function(){
         $state.go('jobSearchResults',{
