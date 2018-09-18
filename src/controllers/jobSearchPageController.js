@@ -10,7 +10,7 @@ app.controller("jobSearchPageController",['$scope','$state', function($scope, $s
             return { abbrev: state }; 
         })
 
-    $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","CSS","Software Developer"];
+    $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","Full Stack","Software Developer", "Front End", "Database Administration"];
     $scope.selected = []; 
         
     //tracks what is selected in checkboxes and pushes them to the $scope.selected
