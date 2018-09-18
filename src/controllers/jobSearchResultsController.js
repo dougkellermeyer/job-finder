@@ -18,25 +18,21 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     }
 
     $scope.result = $scope.selected;
-    console.log($scope.selected);
 }]);
 
 app.filter('keywordFilter', function(){
-    return function(input, checked){
-        console.log(typeof checked)
-
+    return function(allJobs, checked){
         //need to split checked into an array
-
-        // var checkedPutIntoArray = checked.split();
-
+        var checkedArray = checked.split(",");
+    
         var output = [];
 
-        if (checked == ""){
-            return input;
+        if (checkedArray == []){
+            return allJobs;
         }
         else {
-            angular.forEach(input, function(value){
-                if(value.positionName == checked){
+            angular.forEach(allJobs, function(value){
+                if(value.positionName == checkedArray){
                     output.push(value);
                 }
             })
