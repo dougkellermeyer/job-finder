@@ -1,4 +1,4 @@
-app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams',function($scope, searchSvc, $stateParams){
+app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','$timeout',function($scope, searchSvc, $stateParams, $timeout){
 
     var vm = this;
 
@@ -21,18 +21,23 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
 }]);
 
 app.filter('keywordFilter', function(){
-    return function(allJobs, checked){
+    return function(allJobs, checked, $timeout){
         //need to split checked into an array
-        var checkedArray = checked.split(",");
     
         var output = [];
 
-            angular.forEach(allJobs, function(value){
+        if(checked == "" || checked == undefined){
+            return allJobs;
+        }
+        else {
+            var checkedArray = checked.split(",");
+            angular.forEach(allJobs,function(value){
                 if(checkedArray.includes(value.positionName)){
                     output.push(value);
                 }
             })
             return output;
+        }
     }
 });
 

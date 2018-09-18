@@ -19,7 +19,8 @@ app.controller("jobSearchPageController",['$scope','$state', function($scope, $s
             $scope.selected = list.filter(function (val) {
               return item !== val;
             });
-          } else {
+        } 
+        else {
             $scope.selected = list.concat(item);
         }
     };
