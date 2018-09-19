@@ -52,13 +52,5 @@ app.service('searchSvc', function($http){
     };
 });
 
-// filter service with async req so we can filer results based on boxes checked
-app.service('filterSelectedSvc', function($http){
-    return {
-        async: function(){
-            return $http.get('http://127.0.0.1:8080/src/data/jobs.json');
-        }
-    }
-});
 
 
