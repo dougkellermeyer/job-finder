@@ -10,16 +10,30 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     $scope.orderByField = 'positionName';
     $scope.reverseSort = false;
 
+    //for md-chips
+    $scope.readonly = false;
+
     //passing selected checkboxes from jobSearchController.js
     $scope.selected = [];
     
     if($stateParams.selected){
         $scope.selected = $stateParams.selected;
     }
-
+    //pass result to scope and store it a variable so we can split it
     $scope.result = $scope.selected;
+
     $scope.selectedOptions = $scope.result.split(',');
-    console.log($scope.selectedOptions);
+    //     console.log($scope.selectedOptions);
+
+    //if user doens't select a checkbox, bring back all the jobs
+    // if($scope.selectedOptions == "" || $scope.selectedOptions == undefined){
+    //     return vm.jobs;
+    // }
+    // else{
+    //     $scope.selectedOptions = $scope.result.split(',');
+    //     console.log($scope.selectedOptions);
+    // }
+    
 
     //function to remove a row/job from the table
     $scope.removeJob = function(){

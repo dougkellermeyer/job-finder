@@ -11,11 +11,12 @@
                                 <h2>Job Search Results</h2>
                             </md-card-title>
                             
-                            <div ng-show="result">
+                            <div ng-show="result" layout="row">
                                 <h3 class="md-title">You searched for: </h3>
-                                {{selectedOptions}}
-                                <md-chips ng-repeat="filterTerm in selectedOptions">
-                                    {{filterTerm}}
+                                <md-chips ng-repeat="filterTerm in selectedOptions" md-removable="$ctrl.removable" md-readonly="$ctrl.readonly">
+                                    <md-chip ng-click="removeJob()">
+                                        {{filterTerm}}
+                                    </md-chip>
                                 </md-chips>
                             </div>
 
@@ -66,7 +67,6 @@
                                         <td>{{job.datePosted + job.days}}</td>
                                         <td>{{job.id}}</td>
                                         <td><input type="checkbox"></td>
-                                        <td><button ng-model="job.Remove" ng-click="removeJob()">x</button></td>
                                     </tr>
                                 </tbody>
                             </table>
