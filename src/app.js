@@ -30,12 +30,12 @@ app.config(function($stateProvider){
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
             resolve: {
-                // loadingSearchResult: function(){
-                //     return $http.get('https://jsonplaceholder.typicode.com/posts')
-                //     .then(function(res){
-                //         return res.data;
-                //     })
-                // },
+                loadingSearchResult: function($http){
+                    return $http.get('http://www.fakeresponse.com/api/?sleep=2')
+                    .then(function(res){
+                        return res.data;
+                    })
+                },
                 searchResult: function($http){
                     return $http.get('http://vm-1-rmartin9.paychex.com:8080/job')
                             .then(function(res){
@@ -58,6 +58,8 @@ app.service('searchSvc', function($http){
         return $http.get('http://vm-1-rmartin9.paychex.com:8080/job')
     };
 });
+
+
 
 
 

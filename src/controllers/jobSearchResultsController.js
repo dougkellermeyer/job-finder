@@ -1,10 +1,13 @@
-app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','searchResult',function($scope, searchSvc, $stateParams, searchResult){
+app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','searchResult','loadingSearchResult',function($scope, searchSvc, $stateParams, searchResult, loadingSearchResult){
 
     var vm = this;
 
+    //loading search results spinner
+    vm.loading = loadingSearchResult;
     //get all jobs service
+
     // searchSvc.getJobs().then(function(res){
-        vm.jobs = searchResult;
+    vm.jobs = searchResult;
     // })
 
     //table sort parameters
