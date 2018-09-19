@@ -61,6 +61,8 @@
                                         <td>{{job.company}}</td>
                                         <td>{{job.datePosted + job.days}}</td>
                                         <td>{{job.id}}</td>
+                                        <td><input type="checkbox"></td>
+                                        <td><button ng-model="job.Remove" ng-click="removeJob()">x</button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -77,6 +79,7 @@
                                 [auto-hide=""]>
                             </dir-pagination-controls>                    
                         </md-card>
+                    <md-button class="md-raised md-primary" >Save Jobs</md-button>
                     <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Go back</md-button>
                 </md-content>
             </div>

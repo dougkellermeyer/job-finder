@@ -1,9 +1,9 @@
-function SideNav(){
+function SideNavController(){
  }
  
  app.component('jobSidenav',{
      templateUrl: '../src/components/sideNav/sideNav.html',
-     controller: SideNav,
+     controller: SideNavController,
      controllerAs: 'vm'
  })
  

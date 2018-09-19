@@ -18,6 +18,21 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     }
 
     $scope.result = $scope.selected;
+
+    //function to remove a row/job from the table
+    $scope.removeJob = function(){
+        var tableArray = [];
+        $scope.jobList = vm.jobs;
+
+        angular.forEach($scope.jobList, function(val){
+            //loop through and see which box is checked, re-create the 
+            //table without the selected row(s)
+            if(!val.Remove){
+                tableArray.push(val);
+            }
+        });
+        $scope.jobList = tableArray;
+    };
 }]);
 
 app.filter('keywordFilter', function(){
@@ -39,5 +54,5 @@ app.filter('keywordFilter', function(){
             return output;
         }
     }
+    
 });
-
