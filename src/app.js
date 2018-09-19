@@ -30,11 +30,17 @@ app.config(function($stateProvider){
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
             resolve: {
-                loading: function(){
-                    return //loading spinner
-                },
-                result: function(){
-                    return //selected job data per selected/result
+                // loadingSearchResult: function(){
+                //     return $http.get('https://jsonplaceholder.typicode.com/posts')
+                //     .then(function(res){
+                //         return res.data;
+                //     })
+                // },
+                searchResult: function($http){
+                    return $http.get('http://vm-1-rmartin9.paychex.com:8080/job')
+                            .then(function(res){
+                                return res.data;
+                            })
                 }
             }
         })

@@ -1,12 +1,13 @@
-app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','$timeout',function($scope, searchSvc, $stateParams, $timeout){
+app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','searchResult',function($scope, searchSvc, $stateParams, searchResult){
 
     var vm = this;
 
     //get all jobs service
-    searchSvc.getJobs().then(function(res){
-        vm.jobs = res.data;
-    })
+    // searchSvc.getJobs().then(function(res){
+        vm.jobs = searchResult;
+    // })
 
+    //table sort parameters
     $scope.orderByField = 'positionName';
     $scope.reverseSort = false;
 
