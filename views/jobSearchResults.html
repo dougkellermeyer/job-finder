@@ -12,7 +12,9 @@
                             </md-card-title>
                             
                             <div ng-show="result">
-                                    <h3>You searched for: {{result}}</h3>
+                                <md-chips md-removable="ctrl.removable">
+                                    <md-chip>{{result}}</md-chip>
+                                </md-chips>
                             </div>
 
                             <table>

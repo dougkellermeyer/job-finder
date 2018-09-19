@@ -4,7 +4,7 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
 
     //get all jobs service
     searchSvc.getJobs().then(function(res){
-        vm.jobs = res.data.jobs;
+        vm.jobs = res.data;
     })
 
     $scope.orderByField = 'positionName';
