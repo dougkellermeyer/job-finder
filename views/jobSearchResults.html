@@ -51,11 +51,12 @@
                                                     <span ng-show="reverseSort">v</span>
                                                 </span>
                                             </a>
-
                                             </th>
-
                                             <th>
-                                                id 
+                                                More info 
+                                            </th>
+                                            <th>
+                                                Save job 
                                             </th>
                                     </tr>
                                 </thead>
@@ -64,9 +65,17 @@
                                         | orderBy:orderByField:reverseSort | keywordFilter: result">
                                         <td>{{job.positionName}}</td>
                                         <td>{{job.company}}</td>
-                                        <td>{{job.datePosted + job.days}}</td>
-                                        <td>{{job.id}}</td>
-                                        <td><input type="checkbox"></td>
+                                        <td>{{job.datePosted}}</td>
+                                        <td>
+                                            <md-button class="md-icon-button launch" ui-sref="jobDetailsPage">
+                                                <md-icon class="material-icons">chrome_reader_mode</md-icon>
+                                            </md-button>
+                                        </td>
+                                        <td>
+                                            <md-button class="md-icon-button launch">
+                                                <md-icon class="material-icons">bookmark</md-icon>
+                                            </md-button>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -83,7 +92,6 @@
                                 [auto-hide=""]>
                             </dir-pagination-controls>                    
                         </md-card>
-                    <md-button class="md-raised md-primary" >Save Jobs</md-button>
                     <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Go back</md-button>
                 </md-content>
             </div>

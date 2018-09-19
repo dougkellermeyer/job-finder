@@ -28,7 +28,15 @@ app.config(function($stateProvider){
             url: '/results/:selected',
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
-            controllerAs: "$ctrl"
+            controllerAs: "$ctrl",
+            resolve: {
+                loading: function(){
+                    return //loading spinner
+                },
+                result: function(){
+                    return //selected job data per selected/result
+                }
+            }
         })
         .state('jobDetailsPage', {
             url: '/details',
