@@ -18,6 +18,8 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     }
 
     $scope.result = $scope.selected;
+    $scope.selectedOptions = $scope.result.split(',');
+    console.log($scope.selectedOptions);
 
     //function to remove a row/job from the table
     $scope.removeJob = function(){
@@ -46,7 +48,7 @@ app.filter('keywordFilter', function(){
         }
         else {
             var checkedArray = checked.split(",");
-            angular.forEach(allJobs,function(value){
+            angular.forEach(allJobs,function(value){                
                 if(checkedArray.includes(value.positionName)){
                     output.push(value);
                 }
