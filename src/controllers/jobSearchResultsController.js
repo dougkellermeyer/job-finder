@@ -1,3 +1,23 @@
+app.config(function($stateProvider){
+    $stateProvider
+        .state('jobSearchResults', {
+            url: '/results/:selected',
+            templateUrl: 'jobSearchResults.html',
+            controller: "jobSearchResultsController",
+            controllerAs: "$ctrl",
+            resolve: {
+                delay: function($timeout){
+                    return $timeout(function(){}, 1500);
+                },
+                searchResult: function($http){
+                    return $http.get('http://vm-1-rmartin9.paychex.com:8080/job')
+                            .then(function(res){
+                                return res.data;
+                            })
+                }
+            }
+        })
+})
 app.controller("jobSearchResultsController", 
     ['$scope','searchSvc','$stateParams','searchResult','delay',
     function($scope, searchSvc, $stateParams, searchResult, delay){
@@ -16,7 +36,7 @@ app.controller("jobSearchResultsController",
     //table sort parameters
     $scope.orderByField = 'positionName';
     $scope.reverseSort = false;
-
+11
     //passing selected checkboxes from jobSearchController.js
     $scope.selected = [];
     

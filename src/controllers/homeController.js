@@ -1,3 +1,13 @@
+app.config(function($stateProvider){
+    $stateProvider
+        .state('home', {
+            url: '/home',
+            templateUrl: 'home.html',
+            controller: "homeController",
+            controllerAs: "$ctrl"
+        })
+});
+
 app.controller("homeController", function($scope, searchSvc){
     var vm = this;
 

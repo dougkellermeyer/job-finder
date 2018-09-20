@@ -1,3 +1,13 @@
+app.config(function($stateProvider){
+    $stateProvider
+        .state('jobSearchPage', {
+            url: '/search',
+            templateUrl: 'jobSearchPage.html',
+            controller: "jobSearchPageController",
+            controllerAs: "$ctrl"
+        })
+});
+
 app.controller("jobSearchPageController",['$scope','$state','$transitions', function($scope, $state, $transitions){
     
     var vm = this;
