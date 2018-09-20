@@ -47,8 +47,8 @@ app.config(function($stateProvider){
             controller: "jobDetailsPageController",
             controllerAs: "$ctrl"
         })
-
 }).run(function($rootScope){
+    console.log("loading funciton running")
     $rootScope.$on('$stateChangeStart', function(){
         $rootScope.stateLoading = true;
     })
