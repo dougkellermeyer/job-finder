@@ -8,7 +8,7 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("homeController", function($scope, searchSvc){
+app.controller("homeController", function(searchSvc, $scope){
     var vm = this;
 
     searchSvc.getJobs().then(function(res){

@@ -9,8 +9,8 @@ app.config(function($stateProvider){
                 delay: function($timeout){
                     return $timeout(function(){}, 1500);
                 },
-                searchResult: function($http){
-                    return $http.get('http://vm-1-rmartin9.paychex.com:8080/job')
+                searchResult: function($http, url){
+                    return $http.get(url)
                             .then(function(res){
                                 return res.data;
                             })
