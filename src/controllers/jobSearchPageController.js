@@ -35,15 +35,14 @@ app.controller("jobSearchPageController",['$scope','$state','$transitions', func
         });
     }
 
-    //implement a transition so we can introduct a loading screen before going to jobSearchResults 
-    var criteria = {
-        to: function(state){
-            return state.jobSearchResults !=null;
-        }
-    }
+    //shows if any and all tranisitons were successful 
+    $transitions.onSuccess({}, function(transition){
+        console.log(
+            "Transition successful from " + transition.from().name + 
+            " to " + transition.to().name
+        );
+    }) 
 
-    $transitions.onBefore(criteria, function(trans){
-        var loadingState = trans.to().loadingSubState;
-        return trans.router.stateService.target(loadingState);
-    });
+    //implement a transition so we can introduct a loading screen before going to jobSearchResults 
+
 }]);

@@ -1,11 +1,11 @@
 app.controller("jobSearchResultsController", 
-    ['$scope','searchSvc','$stateParams','searchResult','loadingSearchResult',
-    function($scope, searchSvc, $stateParams, searchResult, loadingSearchResult){
+    ['$scope','searchSvc','$stateParams','searchResult','delay',
+    function($scope, searchSvc, $stateParams, searchResult, delay){
 
     var vm = this;
 
     //loading search results spinner
-    vm.loading = loadingSearchResult;
+    vm.loading = delay;
 
     //get all jobs service
     vm.jobs = searchResult;

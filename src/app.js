@@ -29,15 +29,9 @@ app.config(function($stateProvider){
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
-            onEnter: function(){
-                console.log("Entering job search results")
-            },
             resolve: {
-                loadingSearchResult: function($http){
-                    return $http.get('http://www.fakeresponse.com/api/?sleep=1')
-                    .then(function(res){
-                        return res.data;
-                    })
+                delay: function($timeout){
+                    return $timeout(function(){}, 1500);
                 },
                 searchResult: function($http){
                     return $http.get('http://vm-1-rmartin9.paychex.com:8080/job')
@@ -53,7 +47,16 @@ app.config(function($stateProvider){
             controller: "jobDetailsPageController",
             controllerAs: "$ctrl"
         })
-});
+
+}).run(function($rootScope){
+    $rootScope.$on('$stateChangeStart', function(){
+        $rootScope.stateLoading = true;
+    })
+    $rootScope.$on('$stateChangeSuccess', function(){
+        $rootScope.stateLoading = false;
+    })
+}) 
+
 
 //http service to job API
 app.service('searchSvc', function($http){
