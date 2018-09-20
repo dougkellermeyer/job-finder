@@ -1,4 +1,4 @@
-app.controller("jobSearchPageController",['$scope','$state', function($scope, $state){
+app.controller("jobSearchPageController",['$scope','$state','$transitions', function($scope, $state, $transitions){
     
     var vm = this;
 
@@ -34,4 +34,16 @@ app.controller("jobSearchPageController",['$scope','$state', function($scope, $s
             selected: $scope.selected.join(','),
         });
     }
+
+    //implement a transition so we can introduct a loading screen before going to jobSearchResults 
+    var criteria = {
+        to: function(state){
+            return state.jobSearchResults !=null;
+        }
+    }
+
+    $transitions.onBefore(criteria, function(trans){
+        var loadingState = trans.to().loadingSubState;
+        return trans.router.stateService.target(loadingState);
+    });
 }]);

@@ -29,6 +29,9 @@ app.config(function($stateProvider){
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
+            onEnter: function(){
+                console.log("Entering job search results")
+            },
             resolve: {
                 loadingSearchResult: function($http){
                     return $http.get('http://www.fakeresponse.com/api/?sleep=1')

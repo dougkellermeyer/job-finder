@@ -1,4 +1,6 @@
-app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams','searchResult','loadingSearchResult',function($scope, searchSvc, $stateParams, searchResult, loadingSearchResult){
+app.controller("jobSearchResultsController", 
+    ['$scope','searchSvc','$stateParams','searchResult','loadingSearchResult',
+    function($scope, searchSvc, $stateParams, searchResult, loadingSearchResult){
 
     var vm = this;
 
