@@ -4,18 +4,13 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
 
     //loading search results spinner
     vm.loading = loadingSearchResult;
-    //get all jobs service
 
-    // searchSvc.getJobs().then(function(res){
+    //get all jobs service
     vm.jobs = searchResult;
-    // })
 
     //table sort parameters
     $scope.orderByField = 'positionName';
     $scope.reverseSort = false;
-
-    //for md-chips
-    $scope.readonly = false;
 
     //passing selected checkboxes from jobSearchController.js
     $scope.selected = [];
@@ -26,18 +21,15 @@ app.controller("jobSearchResultsController", ['$scope','searchSvc','$stateParams
     //pass result to scope and store it a variable so we can split it
     $scope.result = $scope.selected;
 
+    if ($scope.result && $scope.result.length){
     $scope.selectedOptions = $scope.result.split(',');
-    //     console.log($scope.selectedOptions);
+    }
+    else{
+        $scope.selectedOptions = [];
+    }
 
-    //if user doens't select a checkbox, bring back all the jobs
-    // if($scope.selectedOptions == "" || $scope.selectedOptions == undefined){
-    //     return vm.jobs;
-    // }
-    // else{
-    //     $scope.selectedOptions = $scope.result.split(',');
-    //     console.log($scope.selectedOptions);
-    // }
-    
+     //for md-chips of selected keywords/chips
+     $scope.readonly = false;
 
     //function to remove a row/job from the table
     $scope.removeJob = function(){

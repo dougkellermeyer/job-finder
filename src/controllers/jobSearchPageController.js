@@ -31,7 +31,7 @@ app.controller("jobSearchPageController",['$scope','$state', function($scope, $s
 
     $scope.showSelected = function(){
         $state.go('jobSearchResults',{
-            selected: $scope.selected,
+            selected: $scope.selected.join(','),
         });
     }
 }]);

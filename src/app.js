@@ -31,7 +31,7 @@ app.config(function($stateProvider){
             controllerAs: "$ctrl",
             resolve: {
                 loadingSearchResult: function($http){
-                    return $http.get('http://www.fakeresponse.com/api/?sleep=2')
+                    return $http.get('http://www.fakeresponse.com/api/?sleep=1')
                     .then(function(res){
                         return res.data;
                     })
