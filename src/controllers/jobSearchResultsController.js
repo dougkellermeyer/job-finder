@@ -2,6 +2,9 @@ app.controller("jobSearchResultsController",
     ['$scope','searchSvc','$stateParams','searchResult','delay',
     function($scope, searchSvc, $stateParams, searchResult, delay){
 
+    $scope.currentPage =1;
+    $scope.pageSize = 10;
+
     var vm = this;
 
     //loading search results spinner

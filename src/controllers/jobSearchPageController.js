@@ -45,4 +45,5 @@ app.controller("jobSearchPageController",['$scope','$state','$transitions', func
 
     //implement a transition so we can introduct a loading screen before going to jobSearchResults 
 
+    $transitions.onStart( {})
 }]);

@@ -61,7 +61,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr dir-paginate="job in $ctrl.jobs |itemsPerPage: 20 
+                                    <tr dir-paginate="job in $ctrl.jobs |itemsPerPage: 10 
                                         | orderBy:orderByField:reverseSort | keywordFilter: result">
                                         <td>{{job.positionName}}</td>
                                         <td>{{job.company}}</td>
@@ -81,16 +81,7 @@
                             </table>
 
                         </md-card-content>
-
-                            <dir-pagination-controls
-                                [max-size=""]
-                                [direction-links=""]
-                                [boundary-links=""]
-                                [on-page-change=""]
-                                [pagination-id=""]
-                                [template-url=""]
-                                [auto-hide=""]>
-                            </dir-pagination-controls>                    
+                        <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="dirPagination.tpl.html"></dir-pagination-controls>             
                         </md-card>
                     <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Go back</md-button>
                 </md-content>
