@@ -4,7 +4,7 @@ app.filter('keywordFilter', function(){
     
         var output = [];
 
-        if(checked == "" || checked == undefined){
+        if(checked.length === 0  || typeof checked === undefined){
             return allJobs;
         }
         else {

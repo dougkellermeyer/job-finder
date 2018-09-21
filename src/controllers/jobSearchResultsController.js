@@ -22,19 +22,6 @@ app.controller("jobSearchResultsController",
     ['$scope','searchSvc','$stateParams','searchResult','delay',
     function($scope, searchSvc, $stateParams, searchResult, delay){
 
-    $scope.currentPage =1;
-    $scope.pageSize = 10;
-
-    //loading search results spinner
-    this.loading = delay;
-
-    //get all jobs service
-    this.jobs = searchResult;
-
-    //table sort parameters
-    $scope.orderByField = 'positionName';
-    $scope.reverseSort = false;
-11
     //passing selected checkboxes from jobSearchController.js
     $scope.selected = [];
     
@@ -50,9 +37,23 @@ app.controller("jobSearchResultsController",
     else{
         $scope.selectedOptions = [];
     }
+    
+    //loading search results spinner
+    this.loading = delay;
 
-     //for md-chips of selected keywords/chips
-     $scope.readonly = false;
+    //get all jobs service
+    this.jobs = searchResult;
+
+    //for md-chips of selected keywords/chips
+    $scope.readonly = false;
+
+    //params for dir-pagination controls
+    $scope.currentPage =1;
+    $scope.pageSize = 10;
+
+    //table sort parameters
+    $scope.orderByField = 'positionName';
+    $scope.reverseSort = false;
 
     //function to remove a row/job from the table
     $scope.removeJob = function(){
