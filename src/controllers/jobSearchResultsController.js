@@ -25,13 +25,11 @@ app.controller("jobSearchResultsController",
     $scope.currentPage =1;
     $scope.pageSize = 10;
 
-    var vm = this;
-
     //loading search results spinner
-    vm.loading = delay;
+    this.loading = delay;
 
     //get all jobs service
-    vm.jobs = searchResult;
+    this.jobs = searchResult;
 
     //table sort parameters
     $scope.orderByField = 'positionName';
@@ -59,7 +57,7 @@ app.controller("jobSearchResultsController",
     //function to remove a row/job from the table
     $scope.removeJob = function(){
         var tableArray = [];
-        $scope.jobList = vm.jobs;
+        $scope.jobList = this.jobs;
 
         angular.forEach($scope.jobList, function(val){
             //loop through and see which box is checked, re-create the 

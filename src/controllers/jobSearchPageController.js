@@ -8,17 +8,21 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobSearchPageController",['$scope','$state','$transitions', function($scope, $state, $transitions){
-    
-    var vm = this;
+app.controller("jobSearchPageController",function($scope, $state, $transitions, states){
 
-    vm.userState = '';
-    vm.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+    this.userState = '';
+    this.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
         'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
         'WY')
         .split(' ').map(function (state) { 
-            return { abbrev: state }; 
+            return state; 
         })
+
+    // this.userState = '';
+    // states.split(',') = (function (state) { 
+    //     console.log(state);
+    //         return state; 
+    //     })
 
     $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","Full Stack","Software Developer", "Front End", "Database Administration"];
     $scope.selected = []; 
@@ -55,4 +59,4 @@ app.controller("jobSearchPageController",['$scope','$state','$transitions', func
 
     //implement a transition so we can introduct a loading screen before going to jobSearchResults 
 
-}]);
+});

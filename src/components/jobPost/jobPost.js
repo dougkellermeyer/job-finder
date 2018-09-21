@@ -1,13 +1,9 @@
-function JobPostCtrl(mainSvc){
-    var vm = this;
-
-    mainSvc.getPosts().then(function(res){
-        vm.posts = res.data;
-    })
+function JobPostCtrl(){
+  
 }
 
 app.component('jobPost',{
     templateUrl: '../src/components/jobPost/jobPost.html',
     controller: JobPostCtrl,
-    controllerAs: 'vm'
+    controllerAs: '$ctrl'
 })
