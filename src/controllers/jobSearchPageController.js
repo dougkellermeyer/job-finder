@@ -50,13 +50,21 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
     }
 
     //shows if any and all tranisitons were successful 
-    $transitions.onSuccess({}, function(transition){
-        console.log(
-            "Transition successful from " + transition.from().name + 
-            " to " + transition.to().name
-        );
+    var cleanup = $transitions.onSuccess({}, function(transition){
+        cleanup();
+        $scope.$emit('spinnerEvent');
     }) 
 
-    //implement a transition so we can introduct a loading screen before going to jobSearchResults 
 
+    // implement a transition so we can introduct a loading screen before going to jobSearchResults
+    var matchCriteria = {
+        to: 'jobSearchResults',
+        from: 'jobSearchPage'
+    }; 
+
+    $scope.$on('$destroy',
+    $transitions.onStart(matchCriteria, function(){
+        $scope.$emit('spinnerEvent');
+    })
+    )
 });

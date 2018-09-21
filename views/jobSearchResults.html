@@ -10,8 +10,12 @@
                             <md-card-title>
                                 <h2>Job Search Results</h2>
                             </md-card-title>
+
+                            <div class="loading" ng-show="$ctrl.loading">
+                                Loading...
+                            </div>
                             
-                            <div ng-show="result" layout="row">
+                            <div ng-show="!$ctrl.loading" layout="row">
                                 <h3 class="md-title">You searched for: </h3>
                                 <md-chips ng-repeat="filterTerm in selectedOptions" md-removable="$ctrl.removable" md-readonly="$ctrl.readonly">
                                     <md-chip ng-click="removeJob()">
@@ -20,7 +24,7 @@
                                 </md-chips>
                             </div>
 
-                            <table>
+                            <table ng-show="!$ctrl.loading">
                                 <thead>
                                     <tr>
                                         <th>

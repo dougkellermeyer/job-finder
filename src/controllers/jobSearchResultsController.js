@@ -5,22 +5,28 @@ app.config(function($stateProvider){
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
-            resolve: {
-                delay: function($timeout){
-                    return $timeout(function(){}, 1500);
-                },
-                searchResult: function($http, url){
-                    return $http.get(url)
-                            .then(function(res){
-                                return res.data;
-                            })
-                }
-            }
         })
 })
 app.controller("jobSearchResultsController", 
-    ['$scope','searchSvc','$stateParams','searchResult','delay',
-    function($scope, searchSvc, $stateParams, searchResult, delay){
+    ['$scope','searchSvc','$stateParams','$timeout',
+    function($scope, searchSvc, $stateParams,$timeout){
+    
+    vm = this;
+
+    this.$onInit = function(){
+        $timeout(function(){}, 1500)
+            .then(searchSvc.getJobs)
+                .then(function(res){
+                    vm.jobs = res.data
+                    vm.loading = false;
+                })
+    }
+
+    //default loading to true, then $timeout, after .then
+     vm.loading = true;
+
+    //get all jobs service
+    this.jobs = null;
 
     //passing selected checkboxes from jobSearchController.js
     $scope.selected = [];
@@ -37,13 +43,7 @@ app.controller("jobSearchResultsController",
     else{
         $scope.selectedOptions = [];
     }
-    
-    //loading search results spinner
-    this.loading = delay;
-
-    //get all jobs service
-    this.jobs = searchResult;
-
+  
     //for md-chips of selected keywords/chips
     $scope.readonly = false;
 
