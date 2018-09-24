@@ -57,6 +57,7 @@ app.controller("jobSearchResultsController",
 
     //function to remove a row/job from the table
     $scope.removeJob = function(){
+        console.log("removeJob function firing")
         var tableArray = [];
         $scope.jobList = this.jobs;
 

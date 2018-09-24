@@ -1,6 +1,6 @@
 app.config(function($stateProvider){
     $stateProvider
-        .state('jobDetailsPage', {
+        .state('jobSearchResults.details', {
             url: '/details',
             templateUrl: 'jobDetailsPage.html',
             controller: "jobDetailsPageController",
@@ -9,4 +9,5 @@ app.config(function($stateProvider){
 });
 
 app.controller("jobDetailsPageController", function(){
+
 });
