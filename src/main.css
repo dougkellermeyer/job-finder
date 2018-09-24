@@ -46,5 +46,8 @@ margin-left: 215px;
 }
 
 #jobDetails {
-    padding-top: 20px;
+}
+
+md-card {
+    padding: 25px;
 }
