@@ -48,3 +48,7 @@ margin-left: 215px;
 md-card {
     padding: 25px;
 }
+
+#guidanceSpinner {
+    width: 695px;
+}
