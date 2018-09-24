@@ -8,23 +8,13 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobSearchPageController",function($scope, $state, $transitions, states){
+app.controller("jobSearchPageController",function($scope, $state, $transitions, states, items){
 
     this.userState = '';
-    this.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
-        'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
-        'WY')
-        .split(' ').map(function (state) { 
-            return state; 
-        })
-
-    // this.userState = '';
-    // states.split(',') = (function (state) { 
-    //     console.log(state);
-    //         return state; 
-    //     })
-
-    $scope.items = ["Software","Leading teams","Software Engineer","JavaScript","Full Stack","Software Developer", "Front End", "Database Administration"];
+  
+    this.states = states; 
+    
+    $scope.items = items;
     $scope.selected = []; 
         
     //tracks what is selected in checkboxes and pushes them to the $scope.selected
