@@ -43,11 +43,13 @@ app.controller("jobSearchResultsController",
     else{
         $scope.selectedOptions = [];
     }
+    
+    console.log($scope.selectedOptions);
 
     this.removeFilterTerm = (filterTerm) => {
-        //find filterTerm in scope.selectedOptions remove it from the array
-        console.log("removeFilter function is firing")
+        //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
         console.log(filterTerm);
+        selectedOptions.splice(filterTerm,1)
     }
 
 
