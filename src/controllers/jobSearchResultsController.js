@@ -44,6 +44,12 @@ app.controller("jobSearchResultsController",
         $scope.selectedOptions = [];
     }
 
+    this.removeFilterTerm = (filterTerm) => {
+        //find filterTerm in scope.selectedOptions remove it from the array
+        console.log("removeFilter function is firing")
+        console.log(filterTerm);
+    }
+
 
     //params for dir-pagination controls
     $scope.currentPage =1;

@@ -14,12 +14,12 @@
                             
                             <div ng-show="!$ctrl.loading" layout="row">
                                 <h3 class="md-title">You searched for: </h3>
-                                <md-chips ng-repeat="filterTerm in selectedOptions"  class="md-chip-remove" md-chip-remove>
+                                <md-chips ng-repeat="filterTerm in selectedOptions">
                                     <md-chip>
                                         {{filterTerm}}
-                                        <md-chip-template>
-                                                <md-icon ng-click="removeJob()" class="material-icons">close</md-icon>
-                                        </md-chip-template>
+                                                <button ng-click="$ctrl.removeFilterTerm(filterTerm)">
+                                                    <md-icon class="material-icons">close</md-icon>
+                                                </button>
                                     </md-chip>
                                 </md-chips>
                             </div>
