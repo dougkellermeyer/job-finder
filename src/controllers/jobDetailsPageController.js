@@ -8,6 +8,16 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobDetailsPageController", function(){
+app.controller("jobDetailsPageController", function($timeout){
+    vm = this; 
 
+    vm.loading = true;
+
+    this.$onInit = function(){
+        $timeout(function(){}, 1500)
+            .then(function(){
+                console.log("jobDetails timer working")
+                vm.loading = false;
+            })
+    }
 });

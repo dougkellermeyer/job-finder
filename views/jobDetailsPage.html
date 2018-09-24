@@ -30,31 +30,39 @@
                             </p>
                         </md-card>
                         <md-card>
-                            <h3><strong>Job Assistant Card</strong></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaet 
-                                cucapidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-                                id est laborum
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaet 
-                                cucapidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-                                id est laborum
-                            </p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
-                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-                                commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
-                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaet 
-                                cucapidatat non proident, sunt in culpa qui officia deserunt mollit anim 
-                                id est laborum
-                            </p>
+                            <md-card-content>
+                                    <div class="loading" ng-show="$ctrl.loading">
+                                        <h2>Guidance component currently loading...</h2>
+                                        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                                    </div>
+                                    <div ng-show="!$ctrl.loading">
+                                        <h3><strong>Job Assistant Card</strong></h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+                                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaet 
+                                            cucapidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+                                            id est laborum
+                                        </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+                                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaet 
+                                            cucapidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+                                            id est laborum
+                                        </p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
+                                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+                                            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
+                                            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate 
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaet 
+                                            cucapidatat non proident, sunt in culpa qui officia deserunt mollit anim 
+                                            id est laborum
+                                        </p>
+                                    </div>
+                        </md-card-content>
                         </md-card>
                 </md-content>
                 <md-button class="md-raised md-primary" ui-sref="jobSearchResults">Go back</md-button> 
