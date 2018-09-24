@@ -43,9 +43,7 @@ app.controller("jobSearchResultsController",
     else{
         $scope.selectedOptions = [];
     }
-  
-    //for md-chips of selected keywords/chips
-    $scope.readonly = false;
+
 
     //params for dir-pagination controls
     $scope.currentPage =1;

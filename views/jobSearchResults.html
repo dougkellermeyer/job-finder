@@ -14,10 +14,16 @@
                             
                             <div ng-show="!$ctrl.loading" layout="row">
                                 <h3 class="md-title">You searched for: </h3>
-                                <md-chips ng-repeat="filterTerm in selectedOptions" md-removable="$ctrl.removable" md-readonly="$ctrl.readonly">
+                                <md-chips ng-repeat="filterTerm in selectedOptions" md-removable="true" md-readonly="true">
                                     <md-chip ng-click="removeJob()">
                                         {{filterTerm}}
+                                        <md-chip-template>
+                                            <md-button class="material-icons">close</md-button>
+                                        </md-chip-template>
                                     </md-chip>
+                                    <button md-chip-remove="">
+                                        <md-icon class="material-icons">close</md-icon>
+                                    </button>
                                 </md-chips>
                             </div>
 
