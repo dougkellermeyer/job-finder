@@ -46,10 +46,18 @@ app.controller("jobSearchResultsController",
     
     console.log($scope.selectedOptions);
 
+    //remove chip search/filter term from selectedOptions array
+
     this.removeFilterTerm = (filterTerm) => {
         //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
         console.log(filterTerm);
-        selectedOptions.splice(filterTerm,1)
+        //get index of filterTerm in array
+        var index = $scope.selectedOptions.indexOf(filterTerm);
+        //splice filterTerm from array
+        if (index !==-1){
+        $scope.selectedOptions.splice(index,1)
+        }
+        return $scope.selectedOptions; 
     }
 
 
@@ -61,21 +69,6 @@ app.controller("jobSearchResultsController",
     $scope.orderByField = 'positionName';
     $scope.reverseSort = false;
 
-    //function to remove a row/job from the table
-    $scope.removeJob = function(){
-        console.log("removeJob function firing")
-        var tableArray = [];
-        $scope.jobList = this.jobs;
-
-        angular.forEach($scope.jobList, function(val){
-            //loop through and see which box is checked, re-create the 
-            //table without the selected row(s)
-            if(!val.Remove){
-                tableArray.push(val);
-            }
-        });
-        $scope.jobList = tableArray;
-    };
 }]);
 
 
