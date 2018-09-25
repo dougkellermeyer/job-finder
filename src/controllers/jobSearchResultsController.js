@@ -55,9 +55,12 @@ app.controller("jobSearchResultsController",
         //convert selectedOptions back into a list of strings, connect with 
         //keywordFilter : selected from HTML template
 
-        //why doesn't this work?
-        $scope.selectedOptions.join() = $scope.selected;
+        //puts the selectedOptions into a string to be passed to keywordFilter: selected
+        $scope.selectedOptions.join()
+        //reassign $scope.selected to new string of arrays 
+        $scope.selected = $scope.selectedOptions.join();
     }
+
 
 
     //params for dir-pagination controls
