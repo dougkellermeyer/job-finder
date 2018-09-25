@@ -52,7 +52,11 @@ app.controller("jobSearchResultsController",
         if (index !==-1){
         $scope.selectedOptions.splice(index,1)
         }
-        
+        //convert selectedOptions back into a list of strings, connect with 
+        //keywordFilter : selected from HTML template
+
+        //why doesn't this work?
+        $scope.selectedOptions.join() = $scope.selected;
     }
 
 
