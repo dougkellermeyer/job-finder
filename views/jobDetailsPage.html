@@ -1,8 +1,8 @@
 <div layout="column">   
     
             <div class="container">
-                <md-content id="jobDetails" layout="row">
-                        <md-card>
+                <md-content layout="row">
+                        <md-card id="jobDetails">
                             <h3><strong>Job Description</strong></h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
                                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
@@ -29,13 +29,13 @@
                                 id est laborum
                             </p>
                         </md-card>
-                        <md-card>
+                        <md-card id="guidanceCard">
                             <md-card-content>
                                     <div class="loading" ng-show="$ctrl.loading">
                                         <h2>Guidance component currently loading...</h2>
                                         <md-progress-linear id="guidanceSpinner" md-mode="indeterminate"></md-progress-linear>
                                     </div>
-                                    <div ng-show="!$ctrl.loading">
+                                    <div  ng-show="!$ctrl.loading">
                                         <h3><strong>Job Assistant Guidance</strong></h3>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
                                             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
