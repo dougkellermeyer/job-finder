@@ -1,5 +1,5 @@
 app.filter('keywordFilter', function(){
-    return function(allJobs, checked, $timeout){
+    return function(allJobs, checked){
         //need to split checked into an array
     
         var output = [];

@@ -34,20 +34,15 @@ app.controller("jobSearchResultsController",
     if($stateParams.selected){
         $scope.selected = $stateParams.selected;
     }
-    //pass result to scope and store it a variable so we can split it
-    $scope.result = $scope.selected;
 
-    if ($scope.result && $scope.result.length){
-    $scope.selectedOptions = $scope.result.split(',');
+    if ($scope.selected && $scope.selected.length){
+    $scope.selectedOptions = $scope.selected.split(',');
     }
     else{
         $scope.selectedOptions = [];
     }
-    
-    console.log($scope.selectedOptions);
 
     //remove chip search/filter term from selectedOptions array
-
     this.removeFilterTerm = (filterTerm) => {
         //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
         console.log(filterTerm);
@@ -57,7 +52,7 @@ app.controller("jobSearchResultsController",
         if (index !==-1){
         $scope.selectedOptions.splice(index,1)
         }
-        return $scope.selectedOptions; 
+        
     }
 
 
