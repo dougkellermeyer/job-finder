@@ -45,7 +45,7 @@ app.controller("jobSearchResultsController",
     //remove chip search/filter term from selectedOptions array
     this.removeFilterTerm = (filterTerm) => {
         //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
-        console.log(filterTerm);
+        
         //get index of filterTerm in array
         var index = $scope.selectedOptions.indexOf(filterTerm);
         //splice filterTerm from array
