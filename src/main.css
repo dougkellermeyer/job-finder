@@ -54,5 +54,10 @@ md-card {
     width: 698px;
 }
 
+#filterTermButton {
+    background-color: transparent;
+    border: none;
+}
+
 
 
