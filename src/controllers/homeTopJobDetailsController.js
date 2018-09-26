@@ -9,5 +9,4 @@ app.config(function($stateProvider){
 });
 
 app.controller("homeTopJobDetailsController", function(){
-   console.log("homeTopDetailsController is working")
 });
