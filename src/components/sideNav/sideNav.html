@@ -1,6 +1,6 @@
 <md-sidenav id="sidenav" class=".md-whiteframe-4dp" md-is-locked-open="true">
-    <div layout="row">
-        <md-button><h3>Saved Jobs</h3></md-button>
+    <div id="sideNavheader" layout="column">
+        <md-button class="md-raised" ui-sref="savedJobs"><h3>Saved Jobs (#)</h3></md-button>
         <md-menu>
             <md-button id="dropDownButton" class="md-icon-button" ng-mouseenter="$mdMenu.open()">
                 <md-icon class="material-icons">arrow_drop_down_circle</md-icon>

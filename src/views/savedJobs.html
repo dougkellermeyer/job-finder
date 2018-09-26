@@ -5,9 +5,17 @@
             
             <md-content flex>
                     <md-card>
-                            <md-card-content>
-                                <md-card-title><strong>Saved Jobs</strong></md-card-title>
-                            </md-card-content>
+                        <md-card-content>
+                            <h2><strong>Saved Jobs</strong></h2>
+                            <ul>
+                                    <li ng-repeat="savedJob in savedJobs">
+                                        {{job.positionName + ' - ' + job.company}}
+                                        <md-button class="md-raised" ui-sref="">Learn more</md-button>
+            
+                                        <span><br><br></span>
+                                    </li>
+                                </ul>
+                        </md-card-content>
                     </md-card>
                 <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Go back</md-button>
             </md-content>

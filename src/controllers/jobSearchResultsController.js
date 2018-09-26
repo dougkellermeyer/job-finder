@@ -52,13 +52,16 @@ app.controller("jobSearchResultsController",
         if (index !==-1){
         $scope.selectedOptions.splice(index,1)
         }
-        //convert selectedOptions back into a list of strings, connect with 
-        //keywordFilter : selected from HTML template
 
         //puts the selectedOptions into a string to be passed to keywordFilter: selected
         $scope.selectedOptions.join()
         //reassign $scope.selected to new string of arrays 
         $scope.selected = $scope.selectedOptions.join();
+    }
+
+    //put job object into saveJobService, inject into savedJobsController and savedJob.html
+    this.saveJob = (job) => {
+        console.log(job);
     }
 
 
