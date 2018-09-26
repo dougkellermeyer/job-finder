@@ -8,8 +8,8 @@
                         <md-card-content>
                             <h2><strong>Saved Jobs</strong></h2>
                             <ul>
-                                    <li ng-repeat="savedJob in savedJobs">
-                                        {{job.positionName + ' - ' + job.company}}
+                                    <li ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()">
+                                        {{savedJob.positionName + ' - ' + savedJob.company}}
                                         <md-button class="md-raised" ui-sref="">Learn more</md-button>
             
                                         <span><br><br></span>

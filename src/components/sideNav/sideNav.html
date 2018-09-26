@@ -2,10 +2,10 @@
     <div id="sideNavheader" layout="column">
         <md-button class="md-raised" ui-sref="savedJobs"><h3>Saved Jobs (#)</h3></md-button>
         <md-menu>
-            <md-button id="dropDownButton" class="md-icon-button" ng-mouseenter="$mdMenu.open()">
+            <md-button id="dropDownButton" class="md-icon-button" ng-click="$mdMenu.open()">
                 <md-icon class="material-icons">arrow_drop_down_circle</md-icon>
             </md-button>
-            <md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+            <md-menu-content width="4" ng-click="$mdMenu.close()">
                 <!-- add savedJobs ng-repeat over savedJobs array here -->
                 <md-menu-item ng-repeat="item in [1, 2, 3, 4, 5]">
                     <md-button>
@@ -13,6 +13,7 @@
                     </md-button>
                 </md-menu-item>
             </md-menu-content>
+           
         </md-menu>
     </div>
 </md-sidenav>

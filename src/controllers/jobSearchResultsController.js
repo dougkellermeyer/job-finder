@@ -8,8 +8,8 @@ app.config(function($stateProvider){
         })
 })
 app.controller("jobSearchResultsController", 
-    ['$scope','searchSvc','$stateParams','$timeout',
-    function($scope, searchSvc, $stateParams,$timeout){
+    ['$scope','searchSvc','$stateParams','$timeout', 'saveJobSvc',
+    function($scope, searchSvc, $stateParams,$timeout, saveJobSvc){
     
     vm = this;
 
@@ -62,6 +62,7 @@ app.controller("jobSearchResultsController",
     //put job object into saveJobService, inject into savedJobsController and savedJob.html
     this.saveJob = (job) => {
         console.log(job);
+        saveJobSvc.addSavedJobs(job);
     }
 
 
