@@ -1,9 +1,10 @@
-function SideNavController(){
- }
+app.controller("SideNavController", function(){
+
+})
  
  app.component('jobSidenav',{
      templateUrl: '../components/sideNav/sideNav.html',
-     controller: SideNavController,
+     controller: "SideNavController",
      controllerAs: '$ctrl'
  })
  
