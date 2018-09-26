@@ -16,7 +16,6 @@ app.controller("jobDetailsPageController", function($timeout){
     this.$onInit = function(){
         $timeout(function(){}, 1500)
             .then(function(){
-                console.log("jobDetails timer working")
                 vm.loading = false;
             })
     }
