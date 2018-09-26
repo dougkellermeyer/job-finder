@@ -63,9 +63,8 @@ app.controller("jobSearchResultsController",
     this.saveJob = (job) => {
         console.log(job);
         saveJobSvc.addSavedJobs(job);
+        alert("Job Saved!")
     }
-
-
 
     //params for dir-pagination controls
     $scope.currentPage =1;
