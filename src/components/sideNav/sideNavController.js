@@ -3,7 +3,6 @@ app.controller("SideNavController", function(saveJobSvc){
 //as they populate on the savedJobs.html page
 
 this.saveJobSvc = saveJobSvc;
-
 })
  
  app.component('jobSidenav',{

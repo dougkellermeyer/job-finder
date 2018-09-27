@@ -12,6 +12,9 @@
                         <md-button ui-sref="savedJobs.details">
                                 {{savedJob.positionName + ' - ' + savedJob.company}}                    
                         </md-button>
+                        <button id="filterTermButton" ng-click="$ctrl.saveJobSvc.removeSavedJobs()">
+                            <md-icon class="material-icons">cancel</md-icon>
+                        </button>
                     </md-menu-item>
                 </md-menu-content>
         </md-menu> -->
@@ -20,7 +23,7 @@
                 <md-button class="md-raised" ui-sref="savedJobs.details">
                     {{savedJob.positionName + ' - ' + savedJob.company}} 
                 </md-button>
-                <button id="filterTermButton" ng-click="$ctrl.saveJobSvc.removeSavedJobs()">
+                <button id="filterTermButton" ng-click="$ctrl.saveJobSvc.removeSavedJobs(savedJob)">
                         <md-icon class="material-icons">cancel</md-icon>
                 </button>
             </md-list-item>
