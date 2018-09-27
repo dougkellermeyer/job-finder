@@ -9,10 +9,7 @@ app.service('saveJobSvc', function(){
         },
         removeSavedJobs: (savedJob) => {
             var index = savedJobs.indexOf(savedJob)
-            console.log(index);
-            if (index !==-1){
                 savedJobs.splice(index,1)
-            }
         }
     }
 });
