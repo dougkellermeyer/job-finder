@@ -1,18 +1,25 @@
 <md-sidenav id="sidenav" class=".md-whiteframe-4dp" md-is-locked-open="true">
     <div id="sideNavheader" layout="column">
         <md-button class="md-raised" ui-sref="savedJobs"><h3>Saved Jobs (#)</h3></md-button>
-        <md-menu>
+        <!-- <md-menu>
             <md-button id="dropDownButton" class="md-icon-button" ng-click="$mdMenu.open()">
                 <md-icon class="material-icons">arrow_drop_down_circle</md-icon>
             </md-button>
             <md-menu-content width="4" ng-click="$mdMenu.close()">
-                <!-- add savedJobs ng-repeat over savedJobs array here -->
                 <md-menu-item ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()">
                     <md-button ui-sref="savedJobs.details">
                             {{savedJob.positionName + ' - ' + savedJob.company}}                    
                     </md-button>
                 </md-menu-item>
             </md-menu-content>
-        </md-menu>
+        </md-menu> -->
+
+        <md-list>
+            <md-list-item ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()">
+                <md-button class="md-raised" ui-sref="savedJobs.details">
+                        {{savedJob.positionName + ' - ' + savedJob.company}}                    
+                </md-button>
+            </md-list-item>
+        </md-list>
     </div>
 </md-sidenav>
