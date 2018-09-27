@@ -62,7 +62,7 @@ app.controller("jobSearchResultsController",
     //put job object into saveJobService, inject into savedJobsController and savedJob.html
     this.saveJob = (job) => {
         saveJobSvc.addSavedJobs(job);
-        alert("Job Saved!")
+        // alert("Job Saved!")
     }
 
     //params for dir-pagination controls

@@ -8,11 +8,11 @@
             <md-menu-content width="4" ng-click="$mdMenu.close()">
                 <!-- add savedJobs ng-repeat over savedJobs array here -->
                 <md-menu-item ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()">
-                    <md-button>
-                            {{savedJob.positionName + ' - ' + savedJob.company}}                    </md-button>
+                    <md-button ui-sref="savedJobs.details">
+                            {{savedJob.positionName + ' - ' + savedJob.company}}                    
+                    </md-button>
                 </md-menu-item>
             </md-menu-content>
-           
         </md-menu>
     </div>
 </md-sidenav>
