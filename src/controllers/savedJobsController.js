@@ -11,5 +11,4 @@ app.config(function($stateProvider){
 app.controller("savedJobsController", function(saveJobSvc){
     //inject savedJobSvc to bring in the job object 
     this.saveJobSvc = saveJobSvc;
-
 });

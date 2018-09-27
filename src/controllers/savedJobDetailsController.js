@@ -9,7 +9,7 @@ app.config(function($stateProvider){
 });
 
 app.controller("savedJobsDetailsController",
-function($scope,$timeout, saveJobSvc){
+function($timeout, saveJobSvc){
 
 this.saveJobSvc = saveJobSvc;
 
