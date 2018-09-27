@@ -2,7 +2,7 @@
     <job-navbar></job-navbar>
         <div class="container" layout="row">
             <job-sidenav></job-sidenav>
-            
+            <div ui-view></div>
             <md-content flex>
                     <md-card>
                         <md-card-content>
@@ -10,11 +10,11 @@
                             <ul>
                                     <li ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()">
                                         {{savedJob.positionName + ' - ' + savedJob.company}}
-                                        <md-button class="md-raised" ui-sref="">Job Description + Guidance</md-button>
+                                        <md-button class="md-raised" ui-sref="savedJobs.details">Job Description + Guidance</md-button>
             
                                         <span><br><br></span>
                                     </li>
-                                </ul>
+                            </ul>
                         </md-card-content>
                     </md-card>
                 <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Go back</md-button>
