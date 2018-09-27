@@ -59,10 +59,9 @@ app.controller("jobSearchResultsController",
         $scope.selected = $scope.selectedOptions.join();
     }
 
-    //put job object into saveJobService, inject into savedJobsController and savedJob.html
+    //put job object into saveJobSvc, inject into savedJobsController and savedJob.html
     this.saveJob = (job) => {
         saveJobSvc.addSavedJobs(job);
-        // alert("Job Saved!")
     }
 
     //params for dir-pagination controls

@@ -8,7 +8,9 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobDetailsPageController", function($timeout){
+app.controller("jobDetailsPageController", function($timeout, saveJobSvc){
+    this.saveJobSvc = saveJobSvc;
+    
     vm = this; 
 
     vm.loading = true;

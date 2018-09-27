@@ -16,10 +16,13 @@
                 </md-menu-content>
         </md-menu> -->
         <md-list>
-            <md-list-item ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()">
+            <md-list-item ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()" layout="row">
                 <md-button class="md-raised" ui-sref="savedJobs.details">
-                            {{savedJob.positionName + ' - ' + savedJob.company}} 
+                    {{savedJob.positionName + ' - ' + savedJob.company}} 
                 </md-button>
+                <button id="filterTermButton" ng-click="$ctrl.saveJobSvc.removeSavedJobs()">
+                        <md-icon class="material-icons">cancel</md-icon>
+                </button>
             </md-list-item>
         </md-list>
     </div>
