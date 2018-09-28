@@ -1,6 +1,6 @@
 app.config(function($stateProvider){
     $stateProvider
-        .state('jobSearchResults.details', {
+        .state('sharedDetails', {
             url: '/details',
             templateUrl: 'jobDetailsPage.html',
             controller: "jobDetailsPageController",

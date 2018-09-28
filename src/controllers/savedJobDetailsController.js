@@ -22,7 +22,6 @@ this.$onInit = function(){
             })
 }
 
-
 vm.loading = true;
 
 });

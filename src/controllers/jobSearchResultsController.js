@@ -46,13 +46,11 @@ app.controller("jobSearchResultsController",
     this.removeFilterTerm = (filterTerm) => {
         //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
         
-        //get index of filterTerm in array
         var index = $scope.selectedOptions.indexOf(filterTerm);
-        //splice filterTerm from array
+        
         if (index !==-1){
         $scope.selectedOptions.splice(index,1)
         }
-
         //puts the selectedOptions into a string to be passed to keywordFilter: selected
         $scope.selectedOptions.join()
         //reassign $scope.selected to new string of arrays 
