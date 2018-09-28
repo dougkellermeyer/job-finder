@@ -1,10 +1,14 @@
 app.config(function($stateProvider){
     $stateProvider
         .state('jobSearchResults', {
-            url: '/results/:selected',
+            url: '/results?selected',
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
+            params: {
+                selected: null, 
+                dynamic: true
+            }
         })
 })
 app.controller("jobSearchResultsController", 
@@ -45,7 +49,6 @@ app.controller("jobSearchResultsController",
     //remove chip search/filter term from selectedOptions array
     this.removeFilterTerm = (filterTerm) => {
         //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
-        
         var index = $scope.selectedOptions.indexOf(filterTerm);
         
         if (index !==-1){
@@ -53,8 +56,11 @@ app.controller("jobSearchResultsController",
         }
         //puts the selectedOptions into a string to be passed to keywordFilter: selected
         $scope.selectedOptions.join()
-        //reassign $scope.selected to new string of arrays 
+        //reassign $scope.selected to new array of strings
         $scope.selected = $scope.selectedOptions.join();
+
+        //remove filterTerm from $stateParams.selected to update url
+        
     }
 
     //put job object into saveJobSvc, inject into savedJobsController and savedJob.html

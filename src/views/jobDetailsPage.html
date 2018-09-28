@@ -69,9 +69,9 @@
                         </md-card>
                     </md-content>
         
-                    <md-button class="md-raised md-primary" ui-sref="jobSearchResults">Back to results</md-button> 
+                    <md-button class="md-raised md-primary" ng-click="">Back to results</md-button> 
 
-                    <md-button class="md-raised md-primary" ng-click="$ctrl.saveJobSvc.addSavedJobs()">
+                    <md-button class="md-raised md-primary" ng-click="$ctrl.saveJobSvc.addSavedJobs(savedJob)">
                         Save Job
                             <md-icon class="material-icons">save</md-icon>
                     </md-button>            

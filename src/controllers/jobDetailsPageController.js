@@ -21,4 +21,5 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc){
                 vm.loading = false;
             })
     }
+
 });
