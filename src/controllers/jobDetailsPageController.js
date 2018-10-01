@@ -8,20 +8,24 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc){
+app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc, $scope){
     this.saveJobSvc = saveJobSvc;
+    this.searchSvc = searchSvc;
     
     vm = this; 
 
-    vm.loading = true;
+    this.loading = true;
+    this.oneJob = null;
 
     this.$onInit = function(){
         $timeout(function(){}, 1500)
             .then(searchSvc.getOneJob)
                 .then(function(res){
-                    vm.oneJob = res.data
+                    $scope.oneJob = res.data
+                    console.log(res.data);
                     vm.loading = false;
                 })
     }
 
 });
+
