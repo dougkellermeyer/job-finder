@@ -8,7 +8,7 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobDetailsPageController", function($timeout, saveJobSvc){
+app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc){
     this.saveJobSvc = saveJobSvc;
     
     vm = this; 
@@ -17,9 +17,11 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc){
 
     this.$onInit = function(){
         $timeout(function(){}, 1500)
-            .then(function(){
-                vm.loading = false;
-            })
+            .then(searchSvc.getOneJob)
+                .then(function(res){
+                    vm.oneJob = res.data
+                    vm.loading = false;
+                })
     }
 
 });

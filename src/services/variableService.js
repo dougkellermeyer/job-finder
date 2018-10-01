@@ -1,4 +1,5 @@
 app.constant('url', 'http://vm-1-rmartin9.paychex.com:8080/job');
+app.constant('urlById', 'http://vm-1-rmartin9.paychex.com:8080/job/');
 
 app.constant('states', [
 'AL','AK','AZ', 'AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS',
