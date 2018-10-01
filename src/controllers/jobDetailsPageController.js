@@ -18,13 +18,14 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc, search
     this.oneJob = null;
 
     this.$onInit = function(){
+        searchSvc.getOneJob()
+        .then(function(res){
+            $scope.oneJob = res.data
+        })
         $timeout(function(){}, 1500)
-            .then(searchSvc.getOneJob)
-                .then(function(res){
-                    $scope.oneJob = res.data
-                    console.log(res.data);
-                    vm.loading = false;
-                })
+        .then(() => {
+            vm.loading = false;
+        });
     }
 
 });
