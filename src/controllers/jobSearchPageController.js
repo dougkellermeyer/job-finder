@@ -33,7 +33,7 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
         return list.indexOf(item) > -1;
     };
 
-    $scope.showSelected = function(){
+    this.showSelected = function(){
         $state.go('jobSearchResults',{
             selected: $scope.selected.join(','),
         });

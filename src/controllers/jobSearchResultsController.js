@@ -68,6 +68,11 @@ app.controller("jobSearchResultsController",
         saveJobSvc.addSavedJobs(job);
     }
 
+    this.getJobById = (job) => {
+        searchSvc.getOneJob
+    }
+
+
     //params for dir-pagination controls
     $scope.currentPage =1;
     $scope.pageSize = 10;
