@@ -12,8 +12,7 @@ app.config(function($stateProvider){
         })
 })
 app.controller("jobSearchResultsController", 
-    ['$scope','searchSvc','$stateParams','$timeout', 'saveJobSvc',
-    function($scope, searchSvc, $stateParams,$timeout, saveJobSvc){
+    function($scope, searchSvc, $stateParams,$timeout, saveJobSvc, $state){
     
     vm = this;
 
@@ -68,8 +67,10 @@ app.controller("jobSearchResultsController",
         saveJobSvc.addSavedJobs(job);
     }
 
-    this.getJobById = (job) => {
-        searchSvc.getOneJob
+    this.showJobDetails = (job) => {
+        console.log(job._id)
+        var jobId = job._id;
+        searchSvc.getOneJob(jobId);
     }
 
 
@@ -81,6 +82,6 @@ app.controller("jobSearchResultsController",
     $scope.orderByField = 'positionName';
     $scope.reverseSort = false;
 
-}]);
+});
 
 

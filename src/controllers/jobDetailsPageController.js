@@ -4,11 +4,14 @@ app.config(function($stateProvider){
             url: '/details',
             templateUrl: 'jobDetailsPage.html',
             controller: "jobDetailsPageController",
-            controllerAs: "$ctrl"
+            controllerAs: "$ctrl",
+            params: {
+                job: null
+            }
         })
 });
 
-app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc, $scope){
+app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc, $scope, $stateParams){
     this.saveJobSvc = saveJobSvc;
     this.searchSvc = searchSvc;
     
@@ -27,6 +30,8 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc, search
             vm.loading = false;
         });
     }
+
+    console.log($stateParams.jobId);
 
 });
 
