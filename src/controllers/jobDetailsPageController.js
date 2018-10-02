@@ -13,11 +13,12 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobDetailsPageController", function(saveJobSvc, searchSvc, $timeout, oneJob){
+app.controller("jobDetailsPageController", function(saveJobSvc, searchSvc, $scope, $timeout, oneJob){
     this.saveJobSvc = saveJobSvc;
     this.searchSvc = searchSvc;
 
-    this.oneJob = oneJob;
+    $scope.oneJob = oneJob;
+    console.log(oneJob);
     
     vm = this; 
 
