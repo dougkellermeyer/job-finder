@@ -68,11 +68,8 @@ app.controller("jobSearchResultsController",
     }
 
     this.showJobDetails = (job) => {
-        // console.log(job._id)
-        // var jobId = job._id;
         searchSvc.getOneJob(job);
-    }
-
+    };
 
     //params for dir-pagination controls
     $scope.currentPage =1;

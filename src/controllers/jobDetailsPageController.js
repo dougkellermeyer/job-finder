@@ -11,7 +11,7 @@ app.config(function($stateProvider){
         })
 });
 
-app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc, $scope, $stateParams){
+app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc, $scope){
     this.saveJobSvc = saveJobSvc;
     this.searchSvc = searchSvc;
     
@@ -20,8 +20,8 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc, search
     this.loading = true;
     this.oneJob = null;
 
-    this.$onInit = function(){
-        searchSvc.getOneJob()
+    this.$onInit = function(job){
+        searchSvc.getOneJob(job)
         .then(function(res){
             $scope.oneJob = res.data
         })
@@ -30,8 +30,5 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc, search
             vm.loading = false;
         });
     }
-
-    console.log("the state params are " + $stateParams.jobId);
-
 });
 
