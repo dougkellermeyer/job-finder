@@ -70,7 +70,7 @@
                                         <td>{{job.company}}</td>
                                         <td>{{job.datePosted}}</td>
                                         <td>
-                                            <md-button class="md-icon-button launch" ng-click="$ctrl.showJobDetails(job)" ui-sref="">
+                                            <md-button class="md-icon-button launch" ui-sref="details/{{job._id}}">
                                                 <md-icon class="material-icons">chrome_reader_mode</md-icon>
                                             </md-button>
                                         </td>

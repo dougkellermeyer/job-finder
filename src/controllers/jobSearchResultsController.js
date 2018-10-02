@@ -5,10 +5,7 @@ app.config(function($stateProvider){
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
-            params: {
-                selected: null, 
-                dynamic: true
-            }
+    
         })
 })
 app.controller("jobSearchResultsController", 
@@ -66,16 +63,6 @@ app.controller("jobSearchResultsController",
     this.saveJob = (job) => {
         saveJobSvc.addSavedJobs(job);
     }
-
-    this.showJobDetails = (job, $state) => {
-        searchSvc.getOneJob(job);
-
-    //     () => {$state.go('sharedDetails',{
-    //         job: job._id
-    //         })
-    //     }
-    //     console.log("state.go is working");
-    };
 
     //params for dir-pagination controls
     $scope.currentPage =1;

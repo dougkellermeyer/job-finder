@@ -1,21 +1,23 @@
 app.config(function($stateProvider){
     $stateProvider
-        .state('sharedDetails', {
-            url: '/details',
+        .state('details', {
+            url: '/details/:jobId',
             templateUrl: 'jobDetailsPage.html',
             controller: "jobDetailsPageController",
             controllerAs: "$ctrl",
-            params: {
-                job: null
-            }
+            resolve: {
+                oneJob: function(searchSvc, $stateParams){
+                    return searchSvc.getOneJob($stateParams.jobId);
+                }
+            },
         })
 });
 
-app.controller("jobDetailsPageController", function($timeout, saveJobSvc, searchSvc, $scope, $stateParams){
+app.controller("jobDetailsPageController", function(saveJobSvc, searchSvc, $scope, $timeout, oneJob, $stateParams){
     this.saveJobSvc = saveJobSvc;
     this.searchSvc = searchSvc;
-    console.log($stateParams.job);
-    $scope.oneJob = $stateParams.job;
+
+   this.oneJob = oneJob;
     
     vm = this; 
 
@@ -23,10 +25,7 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc, search
     this.oneJob = null;
 
     this.$onInit = function(){
-        searchSvc.getOneJob()
-        .then(function(res){
-            $scope.oneJob = res.data
-        })
+       
         $timeout(function(){}, 1500)
         .then(() => {
             vm.loading = false;
