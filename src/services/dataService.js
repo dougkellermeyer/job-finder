@@ -5,8 +5,6 @@ app.service('searchSvc', function($http, url){
         return $http.get(url)    
     };
     this.getOneJob = (jobId) => {
-        console.log(jobId);
-        console.log(typeof jobId);
         return $http.get(url + jobId)
     };
 });

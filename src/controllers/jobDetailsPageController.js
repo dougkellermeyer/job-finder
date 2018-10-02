@@ -18,7 +18,6 @@ app.controller("jobDetailsPageController", function(saveJobSvc, searchSvc, $scop
     this.searchSvc = searchSvc;
 
     $scope.oneJob = oneJob;
-    console.log(oneJob);
     
     vm = this; 
 

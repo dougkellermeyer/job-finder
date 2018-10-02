@@ -10,7 +10,7 @@
                             <ul>
                                     <li ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()">
                                         {{savedJob.positionName + ' - ' + savedJob.company}}
-                                        <md-button class="md-raised" ui-sref="savedJobs.details">Job Description + Guidance</md-button>
+                                        <md-button class="md-raised" ui-sref="savedJobs.details({savedJobId: savedJob._id})">Job Description + Guidance</md-button>
                                         <md-button ng-click="$ctrl.saveJobSvc.removeSavedJobs(savedJob)">
                                                 <md-icon class="material-icons">cancel</md-icon>
                                         </md-button>

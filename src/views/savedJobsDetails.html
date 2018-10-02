@@ -4,8 +4,8 @@
             <md-content layout="row">
                     <md-card id="jobDetails">
                          
-                        <h3 ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs() | limitTo:1">
-                            <strong>{{savedJob.positionName + ' - ' + savedJob.company}}</strong></h3>
+                        <h3 ng-model="savedJobDetails">
+                            <strong>{{savedJobDetails.data.positionName + ' - ' + savedJobDetails.data.company}}</strong></h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
                                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
                                     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
