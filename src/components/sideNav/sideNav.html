@@ -20,7 +20,7 @@
         </md-menu> -->
         <md-list>
             <md-list-item ng-repeat="savedJob in $ctrl.saveJobSvc.getSavedJobs()" layout="row">
-                <md-button id="" class="md-raised" ui-sref="savedJobs.details">
+                <md-button id="" class="md-raised" ui-sref="savedJobs.details({savedJobId: savedJob._id})">
                     {{savedJob.positionName + ' - ' + savedJob.company}} 
                 </md-button>
                 <button class="deleteButtonBackground" ng-click="$ctrl.saveJobSvc.removeSavedJobs(savedJob)">
