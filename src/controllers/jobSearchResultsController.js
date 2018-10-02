@@ -67,8 +67,14 @@ app.controller("jobSearchResultsController",
         saveJobSvc.addSavedJobs(job);
     }
 
-    this.showJobDetails = (job) => {
+    this.showJobDetails = (job, $state) => {
         searchSvc.getOneJob(job);
+
+        () => {$state.go('sharedDetails',{
+            job: job._id
+            })
+        }
+        console.log("state.go is working");
     };
 
     //params for dir-pagination controls
