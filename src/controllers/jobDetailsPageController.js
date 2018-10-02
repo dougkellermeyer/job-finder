@@ -31,7 +31,7 @@ app.controller("jobDetailsPageController", function($timeout, saveJobSvc, search
         });
     }
 
-    console.log($stateParams.jobId);
+    console.log("the state params are " + $stateParams.jobId);
 
 });
 

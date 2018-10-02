@@ -68,9 +68,9 @@ app.controller("jobSearchResultsController",
     }
 
     this.showJobDetails = (job) => {
-        console.log(job._id)
-        var jobId = job._id;
-        searchSvc.getOneJob(jobId);
+        // console.log(job._id)
+        // var jobId = job._id;
+        searchSvc.getOneJob(job);
     }
 
 

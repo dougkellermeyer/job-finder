@@ -3,7 +3,7 @@ app.service('searchSvc', function($http, url){
     this.getJobs = function(){
         return $http.get(url)    
     };
-    this.getOneJob = (jobId) => {
-        return $http.get(url + jobId);
+    this.getOneJob = (job) => {
+        return $http.get(url + job._id);
     };
 });
