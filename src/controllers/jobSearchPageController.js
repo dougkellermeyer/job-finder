@@ -34,6 +34,12 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
     };
 
     this.showSelected = function(){
+        //checking to see if any checkboxes were selected
+        $transitions.onBefore({}, function(){
+            if (!Array.isArray($scope.selected) || !$scope.selected.length) {
+                return false;
+            }
+        })
         $state.go('jobSearchResults',{
             selected: $scope.selected.join(','),
         });

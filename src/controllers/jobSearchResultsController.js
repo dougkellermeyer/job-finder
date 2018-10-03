@@ -4,12 +4,12 @@ app.config(function($stateProvider){
             url: '/results?selected',
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
-            controllerAs: "$ctrl",
+            controllerAs: "$ctrl"
     
         })
 })
 app.controller("jobSearchResultsController", 
-    function($scope, searchSvc, $stateParams,$timeout, saveJobSvc, $state){
+    function($scope, searchSvc, $stateParams,$timeout, saveJobSvc, $transitions){
     
     vm = this;
 
@@ -30,18 +30,19 @@ app.controller("jobSearchResultsController",
 
     //passing selected checkboxes from jobSearchController.js
     $scope.selected = [];
-    
+
     if($stateParams.selected){
         $scope.selected = $stateParams.selected;
     }
-
     if ($scope.selected && $scope.selected.length){
     $scope.selectedOptions = $scope.selected.split(',');
     }
     else{
-        $scope.selectedOptions = [];
+        console.log($scope.selectedOptions);
+        alert("no options were selected")
     }
-
+    
+    
     //remove chip search/filter term from selectedOptions array
     this.removeFilterTerm = (filterTerm) => {
         //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
