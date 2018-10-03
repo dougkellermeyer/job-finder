@@ -1,7 +1,7 @@
 app.config(function($stateProvider){
     $stateProvider
         .state('home.details', {
-            url: '/details:homeJobId',
+            url: '/details/:homeJobId',
             templateUrl: 'homeTopJobDetails.html',
             controller: "homeTopJobDetailsController",
             controllerAs: "$ctrl",
@@ -15,9 +15,20 @@ app.config(function($stateProvider){
 
 app.controller("homeTopJobDetailsController", function($timeout, saveJobSvc, searchSvc, $scope, homeJobDetails){
 
-    this.saveJobSvc = saveJobSvc;
-    this.searchSvc = searchSvc;
+this.saveJobSvc = saveJobSvc;
+this.searchSvc = searchSvc;
 
-    $scope.homeJobDetails = homeJobDetails;
+$scope.homeJobDetails = homeJobDetails;
+
+vm = this;
+
+this.$onInit = function(){
+    $timeout(function(){}, 1500)
+            .then(function(){
+                vm.loading = false;
+            })
+}
+
+vm.loading = true;
 
 });
