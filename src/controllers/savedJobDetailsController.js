@@ -14,7 +14,7 @@ app.config(function($stateProvider){
 });
 
 app.controller("savedJobsDetailsController",
-function($timeout, saveJobSvc, searchSvc, $scope, savedJobDetails, $timeout){
+function(saveJobSvc, searchSvc, $scope, savedJobDetails, $timeout){
 
 this.saveJobSvc = saveJobSvc;
 this.searchSvc = searchSvc;

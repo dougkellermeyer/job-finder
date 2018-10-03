@@ -4,12 +4,11 @@
             <job-sidenav></job-sidenav>
             <div ui-view></div>
             <md-content flex>
-                <h1>Home page</h1>
-                <h3>Top jobs</h3>
+                <h1>Top jobs</h1>
                     <ul>
                         <li ng-repeat="job in $ctrl.jobs | limitTo:quantity">
                             {{job.positionName + ' - ' + job.company}}
-                            <md-button class="md-raised" ui-sref="home.details">Learn more</md-button>
+                            <md-button class="md-raised" ui-sref="home.details({homeJobId: job._id})">Learn more</md-button>
 
                             <span><br><br></span>
                         </li>
