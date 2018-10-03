@@ -9,7 +9,7 @@ app.config(function($stateProvider){
         })
 })
 app.controller("jobSearchResultsController", 
-    function($scope, searchSvc, $stateParams,$timeout, saveJobSvc, $transitions){
+    function($scope, searchSvc, $stateParams,$timeout, saveJobSvc){
     
     vm = this;
 
@@ -22,10 +22,8 @@ app.controller("jobSearchResultsController",
                 })
     }
 
-    //default loading to true, then $timeout, after .then
-     vm.loading = true;
+    vm.loading = true;
 
-    //get all jobs service
     this.jobs = null;
 
     //passing selected checkboxes from jobSearchController.js
@@ -36,10 +34,6 @@ app.controller("jobSearchResultsController",
     }
     if ($scope.selected && $scope.selected.length){
     $scope.selectedOptions = $scope.selected.split(',');
-    }
-    else{
-        console.log($scope.selectedOptions);
-        alert("no options were selected")
     }
     
     

@@ -36,8 +36,18 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
     this.showSelected = function(){
         //checking to see if any checkboxes were selected
         $transitions.onBefore({}, function(){
+            //if no checkboxes were selected, abort transition
             if (!Array.isArray($scope.selected) || !$scope.selected.length) {
+                alert("You didn't select anything")
                 return false;
+            }
+            //if checkboxes selected don't match any in the jobs array, abort transition 
+            else if($scope.selected.length < 2) {
+                alert("select at least 2 checkboxes for transition to go")
+                return false;
+            }
+            else{
+                console.log("selected checkboxes match a job(s) and state go should go")
             }
         })
         $state.go('jobSearchResults',{
