@@ -33,7 +33,7 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
         return list.indexOf(item) > -1;
     };
 
-    this.showSelected = function(){
+    this.checkKeywordJobMatch = function(){
         //checking to see if any checkboxes were selected
         $transitions.onBefore({}, function(){
             //if no checkboxes were selected, abort transition
@@ -42,8 +42,8 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
                 return false;
             }
             //if checkboxes selected don't match any in the jobs array, abort transition 
-            else if($scope.selected.length < 2) {
-                alert("select at least 2 checkboxes for transition to go")
+            else if($scope.selected.length > 2) {
+                alert("None of your keywords matched a job listing. Please try again.")
                 return false;
             }
             else{
