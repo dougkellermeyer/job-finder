@@ -68,7 +68,7 @@
                                         | orderBy:orderByField:reverseSort | itemsPerPage: 10">
                                         <td>{{job.positionName}}</td>
                                         <td>{{job.company}}</td>
-                                        <td>{{job.datePosted | date}}</td>
+                                        <td>{{job.datePosted | date: 'MMM d, y'}}</td>
                                         <td>
                                             <md-button class="md-icon-button launch" ui-sref="details({jobId: job._id})">
                                                 <md-icon class="material-icons">chrome_reader_mode</md-icon>
