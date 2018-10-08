@@ -12,7 +12,7 @@ app.config(function($stateProvider){
                     }).then(searchSvc.getJobs)
                         .then(jobs => {
                         const selectedJobs = keywordFilterFilter(jobs.data, $stateParams.selected);
-                       
+                       //throw errors here
                     });
                 }
             }
