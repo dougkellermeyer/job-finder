@@ -43,7 +43,7 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
             }
             //if checkboxes selected don't match any in the jobs array, abort transition 
             else if($scope.selected.length > 2) {
-                alert("None of your keywords matched a job listing. Please try again.")
+                alert("The keywords you selected did not matched a job listing. Please try again.")
                 return false;
             }
             else{
