@@ -4,11 +4,22 @@ app.config(function($stateProvider){
             url: '/search',
             templateUrl: 'jobSearchPage.html',
             controller: "jobSearchPageController",
-            controllerAs: "$ctrl"
+            controllerAs: "$ctrl",
+            resolve: {
+                jobLists: function(searchSvc){
+                    return searchSvc.getJobs();
+                }
+            },
         })
 });
 
-app.controller("jobSearchPageController",function($scope, $state, $transitions, states, items){
+app.controller("jobSearchPageController",function($scope, $state, $transitions, states, items, searchSvc, jobLists){
+    //have searchSvc to have jobs available for keywordFilter 
+    this.searchSvc = searchSvc;
+
+    this.jobLists = jobLists.data; 
+    console.log(this.jobLists);
+    //function to see if selected matches any positionName in job array using keywordFilter
 
     this.userState = '';
   
@@ -36,19 +47,7 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
     this.checkKeywordJobMatch = function(){
         //checking to see if any checkboxes were selected
         $transitions.onBefore({}, function(){
-            //if no checkboxes were selected, abort transition
-            if (!Array.isArray($scope.selected) || !$scope.selected.length) {
-                alert("You didn't select anything")
-                return false;
-            }
-            //if checkboxes selected don't match any in the jobs array, abort transition 
-            else if($scope.selected.length > 2) {
-                alert("The keywords you selected did not matched a job listing. Please try again.")
-                return false;
-            }
-            else{
-                console.log("selected checkboxes match a job(s) and state go should go")
-            }
+           
         })
         $state.go('jobSearchResults',{
             selected: $scope.selected.join(','),

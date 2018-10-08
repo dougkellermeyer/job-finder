@@ -4,8 +4,18 @@ app.config(function($stateProvider){
             url: '/results?selected',
             templateUrl: 'jobSearchResults.html',
             controller: "jobSearchResultsController",
-            controllerAs: "$ctrl"
-    
+            controllerAs: "$ctrl",
+            resolve: {
+                searchResults: function($q, $timeout, searchSvc, keywordFilterFilter, $stateParams){
+                    return $q((resolve) => {
+                        $timeout(() => { resolve() }, 1500);
+                    }).then(searchSvc.getJobs)
+                        .then(jobs => {
+                        const selectedJobs = keywordFilterFilter(jobs.data, $stateParams.selected);
+                       
+                    });
+                }
+            }
         })
 })
 app.controller("jobSearchResultsController", 
@@ -34,8 +44,7 @@ app.controller("jobSearchResultsController",
     }
     if ($scope.selected && $scope.selected.length){
     $scope.selectedOptions = $scope.selected.split(',');
-    }
-    
+    }    
     
     //remove chip search/filter term from selectedOptions array
     this.removeFilterTerm = (filterTerm) => {

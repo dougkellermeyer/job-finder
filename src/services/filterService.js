@@ -1,15 +1,14 @@
 app.filter('keywordFilter', function(){
-    return function(allJobs, checked){
-        //need to split checked into an array
+    return function(allJobs, selected){
+        //need to split selected into an array
         var jobMatchArray = [];
-
-        if(checked.length === 0  || typeof checked === undefined){
+        if(selected.length === 0  || typeof selected === undefined){
             return allJobs;
         }
         else {
-            var checkedArray = checked.split(",");
+            var selectedArray = Array.isArray(selected)?selected:selected.split(",");
             angular.forEach(allJobs,function(value){                
-                if(checkedArray.includes(value.positionName)){
+                if(selectedArray.includes(value.positionName)){
                     jobMatchArray.push(value);
                 }
             })
