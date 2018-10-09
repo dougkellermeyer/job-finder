@@ -78,20 +78,15 @@
                             </div>
                         </div>
                     </div>
-                    <h2>You searched
-                        for: </h2>
-                    <div ng-repeat="jobList in $ctrl.jobLists | keywordFilter: selected">
-                        {{jobList.positionName}}
-                        {{selected}}
-                    </div>
                 </md-card-content>
             </md-card>
             <!-- ------------------- CONTENT ENDS HERE ---------------- -->
-            <md-button ng-click="$ctrl.checkKeywordJobMatch()"
-                class="md-raised md-primary">Search</md-button>
+            <md-button ng-click="$ctrl.showResults()"
+                class="md-raised md-primary">Search
+            </md-button>
             <md-button ui-sref="home"
-                class="md-raised md-primary">Go
-                back</md-button>
+                class="md-raised md-primary">Go back
+            </md-button>
         </md-content>
     </div>
 </div>
