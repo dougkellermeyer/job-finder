@@ -30,5 +30,9 @@ app.controller("jobDetailsPageController", function(saveJobSvc, searchSvc, $scop
             vm.loading = false;
         });
     }
+
+    this.saveJob = (oneJob) => {
+        saveJobSvc.addSavedJobs(oneJob.data);
+    }
 });
 

@@ -29,8 +29,6 @@ app.config(function($stateProvider) {
                                 alert("You didn't select anything!")
                                 throw(e);
                             })
-                            
-                            
                 }
             }
         })
