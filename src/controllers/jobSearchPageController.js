@@ -4,20 +4,13 @@ app.config(function($stateProvider){
             url: '/search',
             templateUrl: 'jobSearchPage.html',
             controller: "jobSearchPageController",
-            controllerAs: "$ctrl",
-            resolve: {
-                jobLists: function(searchSvc){
-                    return searchSvc.getJobs();
-                }
-            },
+            controllerAs: "$ctrl"
         })
 });
 
-app.controller("jobSearchPageController",function($scope, $state, $transitions, states, items, searchSvc, jobLists){
+app.controller("jobSearchPageController",function($scope, $state, states, items, searchSvc){
     //have searchSvc to have jobs available for keywordFilter 
     this.searchSvc = searchSvc;
-    //make list of jobs available 
-    this.jobLists = jobLists.data; 
 
     this.userState = '';
   
