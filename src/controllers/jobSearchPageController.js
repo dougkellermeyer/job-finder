@@ -16,10 +16,8 @@ app.config(function($stateProvider){
 app.controller("jobSearchPageController",function($scope, $state, $transitions, states, items, searchSvc, jobLists){
     //have searchSvc to have jobs available for keywordFilter 
     this.searchSvc = searchSvc;
-
+    //make list of jobs available 
     this.jobLists = jobLists.data; 
-    console.log(this.jobLists);
-    //function to see if selected matches any positionName in job array using keywordFilter
 
     this.userState = '';
   
@@ -45,10 +43,6 @@ app.controller("jobSearchPageController",function($scope, $state, $transitions, 
     };
 
     this.checkKeywordJobMatch = function(){
-        //checking to see if any checkboxes were selected
-        $transitions.onBefore({}, function(){
-           
-        })
         $state.go('jobSearchResults',{
             selected: $scope.selected.join(','),
         });

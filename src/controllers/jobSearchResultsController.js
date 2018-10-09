@@ -8,11 +8,20 @@ app.config(function($stateProvider){
             resolve: {
                 searchResults: function($q, $timeout, searchSvc, keywordFilterFilter, $stateParams){
                     return $q((resolve) => {
-                        $timeout(() => { resolve() }, 1500);
+                        $timeout(() => { 
+                            resolve() 
+                        }, 1000);
                     }).then(searchSvc.getJobs)
                         .then(jobs => {
                         const selectedJobs = keywordFilterFilter(jobs.data, $stateParams.selected);
+                        if(Object.keys(selectedJobs).length === 0) {
+                            alert("The keywords you selected don't match any jobs!");
+                            return false;
+                        }
                        //throw errors here
+                    }).catch((e)=>{
+                        alert("You didn't select anything!")
+                        throw e;
                     });
                 }
             }

@@ -1,73 +1,97 @@
-<div layout="column">   
-    
-        <job-navbar></job-navbar>
-            <div class="container" layout="row">
-                <job-sidenav></job-sidenav>
-    
-                <md-content>
-                <!-- ----------------CONTENT GOES HERE ----------------  -->
-                    <md-card>
-                            <md-card-title>
-                              <md-card-title-text>
-                                <span class="md-headline">Let's find your next job</span>
-                                <span class="md-subhead">Where should we start?</span>
-                              </md-card-title-text>
-                            </md-card-title>
-                        
-                            <md-card-content>
-                              <div layout="row">
-                                <md-input-container>
-                                  <label>City</label>
-                                  <input>
-                                </md-input-container>
-                        
-                                <md-input-container>
-                                  <label>State</label>
-                                  <md-select ng-model="$ctrl.userState">
-                                    <md-option ng-repeat="state in $ctrl.states" ng-value="state">
-                                      {{state}}
-                                    </md-option>
-                                  </md-select>
-                                </md-input-container>
-                                
-                                <md-input-container>
-                                    <label>Zip Code</label>
-                                    <input>
-                                </md-input-container>
-                              </div>
-                            </md-card-content>
-                          </md-card>
+<div layout="column">
 
-                        <md-card>
-                            <md-card-content>
-                                <div>
-                                    <md-card-title>
-                                        <md-card-title-text>
-                                            <span class="md-headline">Select some things you like below</span>
-                                            <span class="md-subhead">Select at least one box</span>
+    <job-navbar></job-navbar>
+    <div class="container" layout="row">
+        <job-sidenav></job-sidenav>
 
-                                        </md-card-title-text>
-                                    </md-card-title>                                                <br>
-                                    <div layout="row" layout-wrap flex>
-                                        <div flex="50" ng-repeat="item in items">
-                                            <md-checkbox ng-checked="exists(item, selected)" ng-click="toggle(item, selected)">
-                                            {{ item }} <span ng-if="exists(item, selected)"></span>
-                                            </md-checkbox>
-                                        </div>
-                                    </div>
-                                </div>
-                                <h2>You searched for: </h2>
-                                <div ng-repeat="jobList in $ctrl.jobLists | keywordFilter: selected">
-                                    {{jobList.positionName}}
-                                    {{selected}}
-                                </div>
-                            </md-card-content>
-                        </md-card>
-                    <!-- ------------------- CONTENT ENDS HERE ---------------- -->
-                    <md-button ng-click="$ctrl.checkKeywordJobMatch()" class="md-raised md-primary">Search</md-button> 
-                    <md-button ui-sref="home" class="md-raised md-primary">Go back</md-button> 
-                </md-content>
-            </div>
+        <md-content>
+            <!-- ----------------CONTENT GOES HERE ----------------  -->
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Let's
+                            find your
+                            next job</span>
+                        <span class="md-subhead">Where
+                            should we
+                            start?</span>
+                    </md-card-title-text>
+                </md-card-title>
+
+                <md-card-content>
+                    <div layout="row">
+                        <md-input-container>
+                            <label>City</label>
+                            <input>
+                        </md-input-container>
+
+                        <md-input-container>
+                            <label>State</label>
+                            <md-select
+                                ng-model="$ctrl.userState">
+                                <md-option
+                                    ng-repeat="state in $ctrl.states"
+                                    ng-value="state">
+                                    {{state}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+
+                        <md-input-container>
+                            <label>Zip
+                                Code</label>
+                            <input>
+                        </md-input-container>
+                    </div>
+                </md-card-content>
+            </md-card>
+
+            <md-card>
+                <md-card-content>
+                    <div>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span
+                                    class="md-headline">Select
+                                    some things you like below
+                                </span>
+                                <span
+                                    class="md-subhead">Select
+                                    at least one box
+                                </span>
+
+                            </md-card-title-text>
+                        </md-card-title>
+                        <br>
+                        <div layout="row"
+                            layout-wrap
+                            flex>
+                            <div flex="50"
+                                ng-repeat="item in items">
+                                <md-checkbox
+                                    ng-checked="exists(item, selected)"
+                                    ng-click="toggle(item, selected)">
+                                    {{item}}
+                                    <span
+                                        ng-if="exists(item, selected)"></span>
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>You searched
+                        for: </h2>
+                    <div ng-repeat="jobList in $ctrl.jobLists | keywordFilter: selected">
+                        {{jobList.positionName}}
+                        {{selected}}
+                    </div>
+                </md-card-content>
+            </md-card>
+            <!-- ------------------- CONTENT ENDS HERE ---------------- -->
+            <md-button ng-click="$ctrl.checkKeywordJobMatch()"
+                class="md-raised md-primary">Search</md-button>
+            <md-button ui-sref="home"
+                class="md-raised md-primary">Go
+                back</md-button>
+        </md-content>
     </div>
-    
-    
+</div>
