@@ -72,7 +72,6 @@ app.controller("jobSearchResultsController",
             }
             $scope.selected = $scope.selectedOptions.join();
             //remove filterTerm from $stateParams
-            console.log($stateParams.selected);
             $state.go("jobSearchResults", {
                 selected: $scope.selected,
             })
