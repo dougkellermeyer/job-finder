@@ -16,8 +16,21 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       '../../node_modules/angular/angular.js',
+      '../../node_modules/angular-mocks/angular-mocks.js',
+      '../../node_modules/angular-material/angular-material.min.css',
+      '../../node_modules/angular-material/angular-material.min.js',
+      '../../node_modules/angular-animate/angular-animate.js',
+      '../../node_modules/angular-aria/angular-aria.js',
+      '../../node_modules/@uirouter/angularjs/release/angular-ui-router.js',
+      '../../node_modules/@uirouter/core/_bundles/ui-router-core.js',
+      '../../node_modules/less/dist/*.js',
+      '../directives/pagination/dirPagination.js',
       '../app.js',
-      'unit/*.js'
+      '../controllers/*.js',
+      '../services/*.js',
+      'unit/*.js',
+      '../src/*',
+      'homeController.spec.js'
     ],
 
 
@@ -57,7 +70,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
 
     // Continuous Integration mode
