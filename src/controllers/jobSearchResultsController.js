@@ -1,4 +1,4 @@
-app.config(function($stateProvider) {
+app.config(function ($stateProvider) {
     $stateProvider
         .state('jobSearchResults', {
             url: '/results?selected',
@@ -6,40 +6,38 @@ app.config(function($stateProvider) {
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
             resolve: {
-                searchResults: function($q, $timeout, searchSvc, keywordFilterFilter, $stateParams, $state) {
+                searchResults: function ($q, $timeout, searchSvc, keywordFilterFilter, $stateParams, $state) {
                     return $q((resolve) => {
                             $timeout(() => {
                                 resolve()
                             }, 500);
                         }).then(searchSvc.getJobs)
-                            .then(jobs => {
-                                const selectedJobs = keywordFilterFilter(jobs.data, $stateParams.selected);
-                                if (Object.keys(selectedJobs).length === 0) {
-                                    alert("The keywords you selected: \n" + $stateParams.selected + " - don't match any jobs!" + "\nTry again!")
-                                    return $state.go('jobSearchPage');
-                                }
-                                else if ($stateParams.selected === undefined){
-                                    alert("You didn't select anything!")
-                                    return $state.go('jobSearchPage');
-                                }
-                                else{
-                                    return $q.resolve();
-                                }
-                            }).catch((e)=> {
+                        .then(jobs => {
+                            const selectedJobs = keywordFilterFilter(jobs.data, $stateParams.selected);
+                            if (Object.keys(selectedJobs).length === 0) {
+                                alert("The keywords you selected: \n" + $stateParams.selected + " - don't match any jobs!" + "\nTry again!")
+                                return $state.go('jobSearchPage');
+                            } else if ($stateParams.selected === undefined) {
                                 alert("You didn't select anything!")
-                                throw(e);
-                            })
+                                return $state.go('jobSearchPage');
+                            } else {
+                                return $q.resolve();
+                            }
+                        }).catch((e) => {
+                            alert("You didn't select anything!")
+                            throw (e);
+                        })
                 }
             }
         })
 })
 app.controller("jobSearchResultsController",
-    function($scope, searchSvc, $stateParams, $timeout, saveJobSvc) {
+    function ($scope, searchSvc, $stateParams, $timeout, saveJobSvc, $state) {
 
         vm = this;
 
-        this.$onInit = function() {
-            $timeout(function() {}, 1500)
+        this.$onInit = function () {
+            $timeout(function () {}, 1500)
                 .then(searchSvc.getJobs)
                 .then(function (res) {
                     vm.jobs = res.data
@@ -64,18 +62,15 @@ app.controller("jobSearchResultsController",
 
         this.removeFilterTerm = (filterTerm) => {
             var index = $scope.selectedOptions.indexOf(filterTerm);
-        
-            //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
             if (index !== -1) {
                 $scope.selectedOptions.splice(index, 1)
             }
-            //puts the selectedOptions into a string to be passed to keywordFilter: selected
-            $scope.selectedOptions.join()
-            //reassign $scope.selected to new array of strings
             $scope.selected = $scope.selectedOptions.join();
-            console.log($scope.selected);
-            //remove filterTerm from $stateParams.selected to update url
+            //remove filterTerm from $stateParams
             console.log($stateParams.selected);
+            $state.go("jobSearchResults", {
+                selected: $scope.selected
+            })
         }
 
         //put job object into saveJobSvc, inject into savedJobsController and savedJob.html
