@@ -5,7 +5,6 @@ app.config(function ($stateProvider) {
             templateUrl: 'jobSearchResults.html',
             params: {
                 selected: {
-                    value: "selected",
                     dynamic: true
                 }
             },
