@@ -31,4 +31,8 @@ this.$onInit = function(){
 
 vm.loading = true;
 
+this.saveJob = (homeJobDetails) => {
+    saveJobSvc.addSavedJobs(homeJobDetails.data);
+}
+
 });
