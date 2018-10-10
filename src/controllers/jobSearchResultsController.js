@@ -3,6 +3,12 @@ app.config(function ($stateProvider) {
         .state('jobSearchResults', {
             url: '/results?selected',
             templateUrl: 'jobSearchResults.html',
+            params: {
+                selected: {
+                    value: "selected",
+                    dynamic: true
+                }
+            },
             controller: "jobSearchResultsController",
             controllerAs: "$ctrl",
             resolve: {
@@ -69,7 +75,7 @@ app.controller("jobSearchResultsController",
             //remove filterTerm from $stateParams
             console.log($stateParams.selected);
             $state.go("jobSearchResults", {
-                selected: $scope.selected
+                selected: $scope.selected,
             })
         }
 
