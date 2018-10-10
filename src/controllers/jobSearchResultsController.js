@@ -58,14 +58,14 @@ app.controller("jobSearchResultsController",
             $scope.selected = $stateParams.selected;
         }
         if ($scope.selected && $scope.selected.length) {
+            //put selected boxes into an array
             $scope.selectedOptions = $scope.selected.split(',');
         }
 
-        //remove chip search/filter term from selectedOptions array
         this.removeFilterTerm = (filterTerm) => {
-            //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
             var index = $scope.selectedOptions.indexOf(filterTerm);
-
+        
+            //find filterTerm in scope.selectedOptions remove it from the selectedOptions array
             if (index !== -1) {
                 $scope.selectedOptions.splice(index, 1)
             }
@@ -75,7 +75,7 @@ app.controller("jobSearchResultsController",
             $scope.selected = $scope.selectedOptions.join();
             console.log($scope.selected);
             //remove filterTerm from $stateParams.selected to update url
-            console.log($stateParams);
+            console.log($stateParams.selected);
         }
 
         //put job object into saveJobSvc, inject into savedJobsController and savedJob.html
