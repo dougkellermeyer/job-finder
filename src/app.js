@@ -1,5 +1,12 @@
 var app = angular.module('jobFinder', 
-    ['ngMaterial', 'ui.router','angularUtils.directives.dirPagination']);
+    [
+        'ngMessages',
+        'ngAnimate',
+        'ngAria',
+        'ngMaterial',
+        'ui.router',
+        'angularUtils.directives.dirPagination'
+    ]);
 
 
 
