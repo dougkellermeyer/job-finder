@@ -25,12 +25,12 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       nodeModule('angular/angular'),
+      nodeModule('angular-mocks'),
       nodeModule('angular-utils-pagination/dirPagination'),
       nodeModule('angular-animate/angular-animate'),
       nodeModule('angular-aria/angular-aria'),
       nodeModule('angular-messages/angular-messages'),
       nodeModule('angular-material/angular-material'),
-      nodeModule('angular-mocks'),
       nodeModule('@uirouter/core/_bundles/ui-router-core'),
       nodeModule('@uirouter/angularjs'),
       'src/**/*.js',

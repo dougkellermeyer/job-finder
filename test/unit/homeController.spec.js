@@ -1,29 +1,25 @@
-describe('homeController',() => {
-    // beforeAll(() => {
-    //     console.log('Before All:', angular.mock);
-    // });
+describe('testing home controller',() => {
+   
     it('should work', function(){
         expect(true).toBe(true);
     });
-    beforeEach(function(done) {
-        angular.mock.module('jobFinder')
-        // angular.mock.inject(function(_$controller_) {
-        //     $controller = _$controller_;
-        //     done()
-        // })
-        angular.mock.inject(function($timeout){
-            done();
+
+    beforeEach(angular.mock.module('jobFinder'));
+
+    var $controller;
+    
+    beforeEach(angular.mock.inject((_$controller_) => {
+        $controller = _$controller_;
+    }));
+    
+    it('should return a numerical quantity value', () => {
+        var $scope = {};
+        var quantity = $scope.quantity;
+
+        expect(quantity).toEqual(5);
+        var controller = $controller('homeController', {
+            $scope: $scope
         });
+
     });
-
-    // var $controller;
-
-    // describe($scope.quantity, function(){
-    //     it('sets the number of jobs to be displayed on the homePage', function(){
-    //         var $scope = {};
-    //         var controller = $controller('homeController', {$scope:$scope});
-    //         $scope.quantity; 
-    //         expect($scope.quantity).toEqual(5);
-    //     });
-    // });
 });
