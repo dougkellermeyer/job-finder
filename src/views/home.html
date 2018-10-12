@@ -5,14 +5,12 @@
             <div ui-view></div>
             <md-content flex>
                 <h1>Top jobs</h1>
-                    <ul>
-                        <li ng-repeat="job in $ctrl.jobs | limitTo:quantity">
+                    <md-list>
+                        <md-list-item class="md-1-line" ng-repeat="job in $ctrl.jobs | limitTo:quantity">
                             {{job.positionName + ' - ' + job.company}}
                             <md-button class="md-raised" ui-sref="home.details({homeJobId: job._id})">Learn more</md-button>
-
-                            <span><br><br></span>
-                        </li>
-                    </ul>
+                            <span><br><br><br><br></span>
+                        </md-list-item>
                     <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Search more jobs</md-button>
                         <br>                
             </md-content>
