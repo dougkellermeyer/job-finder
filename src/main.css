@@ -5,8 +5,14 @@
 .landingPage {
     display: flex;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 5%;
 }
+
+#landingPageButton{
+    justify-content: center;
+    margin-left: 46%;
+}
+
 .resultsPage {
     display: flex;
     justify-content: center;
