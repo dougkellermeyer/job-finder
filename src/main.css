@@ -8,8 +8,6 @@
     margin-top: 5%;
 }
 
-
-
 #landingPageButton{
     justify-content: center;
     margin-left: 46%;
@@ -64,7 +62,7 @@ md-card {
 
 #guidanceSpinner {
     width: 698px;
-    /* width: 500px; */
+    /* width: 504px; */
 }
 
 .deleteButtonBackground {

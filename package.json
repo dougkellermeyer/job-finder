@@ -36,6 +36,10 @@
     "angular-material": "^1.1.10",
     "angular-mocks": "^1.6.10",
     "angular-utils-pagination": "^0.11.1",
-    "less": "^3.8.1"
+    "less": "^3.8.1",
+    "express": "*",
+    "body-parser": "*",
+    "mongoose":"*"
+
   }
 }
