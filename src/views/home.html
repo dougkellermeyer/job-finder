@@ -2,15 +2,17 @@
     <job-navbar></job-navbar>
         <div class="container" layout="row">
             <job-sidenav></job-sidenav>
+            <md-divider></md-divider>
             <div ui-view></div>
             <md-content flex>
                 <h1>Top jobs</h1>
                     <md-list>
-                        <md-list-item class="md-1-line" ng-repeat="job in $ctrl.jobs | limitTo:quantity">
+                        <md-list-item class="topJobListItem" ng-repeat="job in $ctrl.jobs | limitTo:quantity">
                             {{job.positionName + ' - ' + job.company}}
                             <md-button class="md-raised" ui-sref="home.details({homeJobId: job._id})">Learn more</md-button>
                             <span><br><br><br><br></span>
                         </md-list-item>
+                        <md-divider></md-divider>
                     <md-button class="md-raised md-primary" ui-sref="jobSearchPage">Search more jobs</md-button>
                         <br>                
             </md-content>
