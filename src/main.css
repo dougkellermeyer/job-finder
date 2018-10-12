@@ -13,6 +13,10 @@
     margin-left: 46%;
 }
 
+#navLogo {
+    z-index: 1000;
+}
+
 .resultsPage {
     display: flex;
     justify-content: center;
