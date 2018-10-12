@@ -5,4 +5,19 @@ app.constant('states', [
 'MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'
 ]);
 
-app.constant('items', ["Network Engineer", "Software","Software Engineer", "Leading teams","JavaScript","Full Stack","Software Developer", "Front End", "Database Administrator"]);
+app.constant('items', [
+    "Network Engineer", 
+    "Software",
+    "Software Engineer", 
+    "Leading teams",
+    "JavaScript",
+    "Full Stack",
+    "Software Developer", 
+    "Front End", 
+    "Database Administrator", 
+    "Cloud Architect", 
+    "Front End Developer",
+    "QA Engineer",
+    "UX Engineer",
+    "VP of Software"
+]);
