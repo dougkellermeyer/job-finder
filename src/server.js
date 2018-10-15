@@ -26,12 +26,14 @@ expressApp.get('/api/jobs', (req, res) => {
     })
 });
 
-expressApp.get('/api/jobs/:id', (req, res) => {
+expressApp.get('/api/jobs/:_id', (req, res) => {
     Job.getJobById(req.params._id,(err,job)=>{
         if(err){
             throw err;
         }
         res.json(job);
+        console.log(job);
+        console.log(req.params._id);
     });
 });
 
