@@ -24,7 +24,22 @@ var jobSchema = mongoose.Schema({
     datePosted: {
         type: Date,
         default: Date.now
+    },
+    __v: {
+        type: Number
     }
 });
 
-var newJob = module.exports = mongoose.model('newJob', jobSchema);
+var Job = module.exports = mongoose.model('Job', jobSchema, 'jobList');
+
+//get all jobs
+
+module.exports.getNewJobs = (callback) => {
+    Job.find(callback);
+};
+
+//get one job
+module.exports.getJobById = (id, callback) => {
+    Job.findById(id,callback);
+};
+
