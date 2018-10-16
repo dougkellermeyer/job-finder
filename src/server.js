@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var expressApp = express();
+var mongoose = require('mongoose').set('debug', true);
+var router = express();
 
 Job = require('./models/jobSchema');
 Test = require('./models/test');
@@ -13,11 +13,11 @@ var PORT = 8080;
 mongoose.connect('mongodb://localhost/jobs');
 var db = mongoose.connection;
 
-expressApp.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.send('Please use the /api/jobs');
 });
 
-expressApp.get('/api/jobs', (req, res) => {
+router.get('/api/jobs', (req, res) => {
     Job.getNewJobs((err,jobs)=>{
         if(err){
             throw err;
@@ -26,23 +26,21 @@ expressApp.get('/api/jobs', (req, res) => {
     })
 });
 
-expressApp.get('/api/jobs/:_id', (req, res) => {
+router.get('/api/jobs/:_id', (req, res) => {
     Job.getJobById(req.params._id,(err,job)=>{
         if(err){
             throw err;
         }
         res.json(job);
-        console.log(job);
-        console.log(req.params._id);
     });
 });
 
-expressApp.listen(PORT);
+router.listen(PORT);
 console.log("running app on port " + PORT + " !")
 
 //additional http functions needed for API
-// expressApp.post();
-// expressApp.put();
-// expressApp.get();
-// expressApp.delete();
-// expressApp.get();
+// router.post();
+// router.put();
+// router.get();
+// router.delete();
+// router.get();

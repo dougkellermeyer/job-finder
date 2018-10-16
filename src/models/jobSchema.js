@@ -30,7 +30,7 @@ var jobSchema = mongoose.Schema({
     }
 });
 
-var Job = module.exports = mongoose.model('Job', jobSchema, 'jobList');
+var Job = module.exports = mongoose.model('Job', jobSchema, 'jobs');
 
 //get all jobs
 

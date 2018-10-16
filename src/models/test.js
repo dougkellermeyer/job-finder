@@ -12,3 +12,7 @@ var Test = module.exports = mongoose.model('Test', testSchema, 'test');
 module.exports.getTests = (callback) => {
     Test.find(callback);
 }
+
+module.exports.getTestById = (id, callback) => {
+    Test.findById(id,callback);
+};
