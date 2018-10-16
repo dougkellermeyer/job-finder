@@ -77,10 +77,3 @@ router.delete('/api/jobs/:_id', (req, res) => {
 
 router.listen(PORT);
 console.log("running app on port " + PORT + " !")
-
-//additional http functions needed for API
-// router.post();
-// router.put();
-// router.get();
-// router.delete();
-// router.get();
