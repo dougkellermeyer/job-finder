@@ -2,7 +2,7 @@ app.config(function ($stateProvider) {
     $stateProvider
         .state('jobSearchResults', {
             url: '/results?selected',
-            templateUrl: 'jobSearchResults.html',
+            templateUrl: 'src/views/jobSearchResults.html',
             params: {
                 selected: {
                     dynamic: true

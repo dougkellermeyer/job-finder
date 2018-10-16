@@ -2,7 +2,7 @@ app.config(function($stateProvider){
     $stateProvider
         .state('home.details', {
             url: '/details/:homeJobId',
-            templateUrl: 'homeTopJobDetails.html',
+            templateUrl: 'src/views/homeTopJobDetails.html',
             controller: "homeTopJobDetailsController",
             controllerAs: "$ctrl",
             resolve: {

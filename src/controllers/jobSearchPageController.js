@@ -2,7 +2,7 @@ app.config(function($stateProvider){
     $stateProvider
         .state('jobSearchPage', {
             url: '/search',
-            templateUrl: 'jobSearchPage.html',
+            templateUrl: 'src/views/jobSearchPage.html',
             controller: "jobSearchPageController",
             controllerAs: "$ctrl"
         })

@@ -2,7 +2,7 @@ app.config(function($stateProvider){
     $stateProvider
         .state('savedJobs', {
             url: '/saved',
-            templateUrl: 'savedJobs.html',
+            templateUrl: 'src/views/savedJobs.html',
             controller: "savedJobsController",
             controllerAs: "$ctrl"
         })

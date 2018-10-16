@@ -2,7 +2,7 @@ function Navbar(){
 }
 
 app.component('jobNavbar',{
-    templateUrl: '../components/Navbar/Navbar.html',
+    templateUrl: 'src/components/Navbar/Navbar.html',
     controller: Navbar,
     controllerAs: '$ctrl'
 })

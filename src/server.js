@@ -8,7 +8,7 @@ router.use(bodyParser.json());
 Job = require('./models/jobSchema');
 Test = require('./models/test');
 
-var PORT = 8080;
+var PORT = 3000;
 
 //Connect to mongoose and locally hosted mongoDB 
 
