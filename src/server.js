@@ -17,7 +17,7 @@ var db = mongoose.connection;
 
 //message for hitting the API
 router.get('/', (req, res) => {
-    res.send('Please use the /api/jobs');
+    res.send('Welcome to the job-finder API! Please use /api/jobs to get jobs');
 });
 
 //Will GET  all jobs in DB

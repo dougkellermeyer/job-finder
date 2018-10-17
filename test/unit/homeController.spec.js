@@ -8,9 +8,9 @@ describe('testing home controller',() => {
 
     var $controller;
     
-    // beforeEach(angular.mock.inject((_$controller_) => {
-    //     $controller = _$controller_;
-    // }));
+    beforeEach(angular.mock.inject((_$controller_) => {
+        $controller = _$controller_;
+    }));
     
     it('should return a numerical quantity value', () => {
         var $scope = {};
