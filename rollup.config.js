@@ -6,7 +6,7 @@ import json from 'rollup-plugin-json'
 export default {
     input: './src/app.js',
     output: {
-        file: 'build/app.min.js',
+        file: 'build/app.js',
         format: 'iife',
         name: 'JofFinderBundle',
         sourcemap: true
