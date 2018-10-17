@@ -4,9 +4,9 @@ import babel from 'rollup-plugin-babel'
 import json from 'rollup-plugin-json'
 
 export default {
-    input: './src/main.js',
+    input: './src/app.js',
     output: {
-        file: 'static/main.js',
+        file: 'build/app.min.js',
         format: 'iife',
         name: 'JofFinderBundle',
         sourcemap: true
