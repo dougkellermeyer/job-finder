@@ -35,13 +35,14 @@
     "angular": "^1.6.10",
     "angular-animate": "^1.6.10",
     "angular-aria": "^1.6.10",
-    "angular-messages": "^1.6.10",
     "angular-material": "^1.1.10",
+    "angular-messages": "^1.6.10",
     "angular-mocks": "^1.6.10",
     "angular-utils-pagination": "^0.11.1",
-    "less": "^3.8.1",
-    "express": "*",
     "body-parser": "*",
-    "mongoose": "*"
+    "express": "*",
+    "less": "^3.8.1",
+    "mongoose": "*",
+    "serve": "^10.0.2"
   }
 }
