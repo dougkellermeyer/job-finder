@@ -10,7 +10,7 @@
     "build:less": "node helpers/build-less.js",
     "dev": "npm-run-all",
     "serve": "serve",
-    "save": "serve"
+    "start": "serve"
   },
   "author": "Doug Kellermeyer",
   "license": "MIT",
