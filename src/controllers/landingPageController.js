@@ -1,4 +1,4 @@
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider ){
+app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider
         .state('landingPage', {
             url: '/',
@@ -7,7 +7,6 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider ){
             controllerAs: '$ctrl'
         })
     $urlRouterProvider.otherwise('/');
-    $locationProvider.html5Mode(true);
 });
 
 app.controller('landingPageController', function(){
