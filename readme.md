@@ -1,11 +1,17 @@
 # Job App
 
-This is an application to assist with the job finding process. Check out "Doug Application User Stories" for a more detailed description.
+This is an application to assist with the job search process.
 
 ## Running
 
 1. `npm install`
-1. `npm run build`
-1. `npm run serve`
+1. `npm start`
 1. Navigate to the locally hosted server
-* If you've navigated to the locally hosted server and you're not seeing anything, add /#! to your URL. 
+
+* `npm start` will build the application for you and serve it locally
+* If you'd like to build without serving, use `npm build` and `serve` to launch app
+
+
+## To Test
+1. `npm test` - runs the Karma server; launch your desired testing browser manually
+

@@ -2,15 +2,13 @@
   "name": "job-finder",
   "version": "1.0.0",
   "description": "An app to help make finding a job a little less daunting",
-  "main": "src/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start karma.conf.js",
     "build": "npm-run-all build:*",
     "build:js": "rollup -c",
-    "build:less": "node helpers/build-less.js",
     "dev": "npm-run-all",
     "serve": "serve",
-    "start": "serve"
+    "start": "run-s build:* serve"
   },
   "author": "Doug Kellermeyer",
   "license": "MIT",
@@ -25,12 +23,14 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.2",
     "karma-phantomjs-launcher": "^1.0.4",
+    "npm-run-all": "^4.1.3",
     "rollup-plugin-babel": "^4.0.2",
     "rollup-plugin-commonjs": "^9.1.6",
     "rollup-plugin-json": "^3.0.0",
     "rollup-plugin-node-resolve": "^3.3.0"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "@uirouter/angularjs": "^1.0.20",
     "angular": "^1.6.10",
     "angular-animate": "^1.6.10",
