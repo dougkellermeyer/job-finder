@@ -20,7 +20,7 @@ app.config(function ($stateProvider) {
                         .then(jobs => {
                             const selectedJobs = keywordFilterFilter(jobs.data, $stateParams.selected);
                             if (Object.keys(selectedJobs).length === 0) {
-                                alert("The keywords you selected: \n" + $stateParams.selected + " - don't match any jobs!" + "\nTry again!")
+                                alert("The keyword you selected: \n" + $stateParams.selected + " - doesn't match any jobs!" + "\nTry again!")
                                 return $state.go('jobSearchPage');
                             } else if ($stateParams.selected === undefined) {
                                 alert("You didn't select anything!")
