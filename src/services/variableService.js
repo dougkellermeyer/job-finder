@@ -1,4 +1,4 @@
-app.constant('url', 'https://job-finder-1.herokuapp.com/src/data/jobs.json');
+app.constant('url', 'http://localhost:3000/api/jobs/');
 
 app.constant('states', [
 'AL','AK','AZ', 'AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS',
