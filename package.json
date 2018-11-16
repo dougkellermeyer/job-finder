@@ -8,7 +8,7 @@
     "build:js": "rollup -c",
     "dev": "npm-run-all",
     "serve": "serve",
-    "start": "run-s build:* serve"
+    "start": "serve"
   },
   "author": "Doug Kellermeyer",
   "license": "MIT",
