@@ -8,7 +8,7 @@
     "build:js": "rollup -c",
     "dev": "npm-run-all",
     "serve": "serve",
-    "start": "run-s build:* serve"
+    "start": "serve"
   },
   "author": "Doug Kellermeyer",
   "license": "MIT",
@@ -42,7 +42,9 @@
     "body-parser": "*",
     "express": "*",
     "less": "^3.8.1",
+    "live-server": "^1.2.0",
     "mongoose": "*",
+    "rollup": "^0.66.6",
     "serve": "^10.0.2"
   }
 }
