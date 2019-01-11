@@ -1,79 +1,22 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose').set('debug', true);
-var router = express();
+var env = require('dotenv');
 
-router.use(bodyParser.json());
+var config = require('./src/api/config')
+var routes = require('./src/api/routes')
 
-Job = require('./models/jobSchema');
-Test = require('./models/test');
+var app = express();
 
-var PORT = 3000;
+app.use(bodyParser.json());
+app.use('/', routes);
 
-//Connect to mongoose and locally hosted mongoDB 
+mongoose.connect(config.mongo.url);
 
-mongoose.connect('mongodb://localhost/jobs');
-var db = mongoose.connection;
+if (config.seedDB){
+    require('./src/api/seeddb');
+}
 
-//message for hitting the API
-router.get('/', (req, res) => {
-    res.send('Welcome to the job-finder API! Please use /api/jobs to get jobs');
+app.listen(config.server.port, ()=>{
+    console.log('running app on port ' + config.server.port + '!')
 });
-
-//Will GET  all jobs in DB
-router.get('/api/jobs', (req, res) => {
-    Job.getNewJobs((err, jobs) => {
-        if (err) {
-            throw err;
-        }
-        res.json(jobs);
-    })
-});
-
-//Will CREATE a new job in DB
-router.post('/api/jobs/', (req, res) => {
-    Job.createJob(req.body, (err, job) => {
-        if (err) {
-            throw err;
-        }
-        res.json(job);
-    });
-});
-
-//Will GET job with specified id
-router.get('/api/jobs/:_id', (req, res) => {
-    Job.getJobById(req.params._id, (err, job) => {
-        if (err) {
-            throw err;
-        }
-        res.json(job);
-    });
-});
-
-//Will UPDATE job with specified id
-router.put('/api/jobs/:_id', (req, res) => {
-    var id = req.params._id;
-    var job = req.body;
-    Job.updateJob(id, job, {}, (err, job) => {
-        if (err) {
-            throw err;
-        }
-        res.json(job);
-    });
-});
-
-//Will DELETE job with specified id
-router.delete('/api/jobs/:_id', (req, res) => {
-    var id = req.params._id;
-    Job.removeJob(id, (err, job) => {
-        if (err) {
-            throw err;
-        }
-        res.json(job);
-    });
-});
-
-
-
-router.listen(PORT);
-console.log("running app on port " + PORT + " !")
