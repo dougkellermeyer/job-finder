@@ -61,8 +61,8 @@ md-card {
 }
 
 #guidanceSpinner {
-    width: 698px;
-    /* width: 504px; */
+    /* width: 698px; */
+    width: 650px;
 }
 
 .deleteButtonBackground {
